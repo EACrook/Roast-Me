@@ -1,4 +1,4 @@
-const categoryData = [
+const sweatenerData = [
     {
       sweatener_name: 'Sugar',
     },

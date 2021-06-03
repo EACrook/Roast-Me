@@ -1,4 +1,4 @@
-const categoryData = [
+const milkData = [
     {
       milk_name: '2% Milk',
     },

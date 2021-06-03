@@ -1,4 +1,4 @@
-const categoryData = [{
+const coffeeData = [{
         coffee_name: 'Light Roast',
     },
     {

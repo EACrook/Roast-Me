@@ -1,4 +1,4 @@
-const categoryData = [
+const syrupData = [
     {
       syrup_name: 'Honey',
     },
