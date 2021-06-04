@@ -2,15 +2,15 @@ const Drink = require('./Drink');
 const Ingredient = require ('./Ingredient');
 const DrinkIngredient = require('./DrinkIngredient')
 
-// Ingredient belongs to Drink
-Drink.belongsTo(Ingredient, {
-    foreignKey: 'ingredient_id'
-})
+// // Ingredient belongs to Drink
+// Drink.belongsTo(Ingredient, {
+//     foreignKey: 'ingredient_id'
+// })
 
-// Drink has many Ingredients
-Ingredient.hasMany(Drink, {
-    foreignKey: 'ingredient_id'
-});
+// // Drink has many Ingredients
+// Ingredient.hasMany(Drink, {
+//     foreignKey: 'ingredient_id'
+// });
 
 // Drinks belongToMany Ingredients (through DrinkIngredient)
 Drink.belongsToMany(Ingredient, {
