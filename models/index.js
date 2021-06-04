@@ -1,5 +1,6 @@
 const Drink = require('./Drink');
 const Ingredient = require ('./Ingredient');
+const DrinkIngredient = require('./DrinkIngredient')
 
 // Ingredient belongs to Drink
 Drink.belongsTo(Ingredient, {
@@ -11,7 +12,20 @@ Ingredient.hasMany(Drink, {
     foreignKey: 'ingredient_id'
 });
 
+// Drinks belongToMany Ingredients (through DrinkIngredient)
+Drink.belongsToMany(Ingredient, {
+    through: DrinkIngredient,
+    foreignKey: 'drink_id'
+})
+
+// Ingredients belongToMany Drinks (through DrinkIngredient)
+Ingredient.belongsToMany(Drink, {
+    through: DrinkIngredient,
+    foreignKey: 'ingredient_id'
+})
+
 module.exports = {
     Drink,
-    Ingredient
+    Ingredient,
+    DrinkIngredient
 }
