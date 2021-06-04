@@ -1,17 +1,15 @@
+const { Drink } = require('../models');
+
 const drinksData = [{
-    drink_name: 'Cold Brew',
-    recipe:
-},
-{
     drink_name: 'Latte',
-    recipe:
+    temp: 'hot'
 },
 {
-    drink_name: 'Iced Coffee',
-    recipe:
-},
-{
-    drink_name: 'Espresso',
-    recipe:
+    drink_name: 'Mocha',
+    temp: 'hot'
 }
 ];
+
+const seedDrinks = () => Drink.bulkCreate(drinksData);
+
+module.exports = seedDrinks;

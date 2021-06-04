@@ -1,4 +1,6 @@
-const ingredientData = [{
+const { Ingredient } = require('../models')
+
+const ingredientsData = [{
         ingredient_name: 'Light Roast',
     },
     {
@@ -36,6 +38,30 @@ const ingredientData = [{
     },
     {
         ingredient_name: 'Soy Milk'
+    },
+    {
+        ingredient_name: 'Steamed 2% Milk',
+    },
+    {
+        ingredient_name: 'Steamed Whole Milk',
+    },
+    {
+        ingredient_name: 'Steamed 1% Milk',
+    },
+    {
+        ingredient_name: 'Steamed Half & Half',
+    },
+    {
+        ingredient_name: 'Steamed Heavy Whipping Cream',
+    },
+    {
+        ingredient_name: 'Steamed Oat Milk'
+    },
+    {
+        ingredient_name: 'Steamed Almond Milk'
+    },
+    {
+        ingredient_name: 'Steamed Soy Milk'
     },
     {
         ingredient_name: 'Sugar',
@@ -92,3 +118,7 @@ const ingredientData = [{
         ingredient_name: 'White Tea'
     }
 ];
+
+const seedIngredients = () => Ingredient.bulkCreate(ingredientsData)
+
+module.exports = seedIngredients;
