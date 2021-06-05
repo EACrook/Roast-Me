@@ -1,8 +1,13 @@
 const express = require('express');
 const routes = require('./routes');
+const exphbs = require('express-handlebars');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// configure handlebars
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
