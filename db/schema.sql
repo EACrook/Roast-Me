@@ -1,0 +1,5 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS coffeeshop_db;
+
+-- CREATE DATABASE
+CREATE DATABASE coffeeshop_db;
