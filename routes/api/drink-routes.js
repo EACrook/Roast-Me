@@ -77,5 +77,19 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+// update a drink
+router.put('/:id', (req, res) => {
+    // update temperature of drink
+    Drink.update({temp: req.body.temp}, {
+        where: {
+            id: req.params.id
+        },
+    })
+    .then((updatedDrinkIngredient) => res.json(updatedDrinkIngredient))
+    .catch((err) => {
+        console.log('err', err);
+        res.status(400).json(err);
+    });
+});
 
 module.exports = router;
