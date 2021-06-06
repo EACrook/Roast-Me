@@ -18,4 +18,9 @@ router.get('/', (req, res) => {
         });
 })
 
+router.post('/', (req,res) => {
+    Drink.create(req.body)
+    .then((drinks) => res.status(200).json(drinks))
+    .catch((err) => res.status(500).json(err));
+});
 module.exports = router;
