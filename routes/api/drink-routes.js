@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
                 model: Ingredient,
                 through: DrinkIngredient
             }]
-        }).then((drinks) => res.json(drinks))
-        .catch((err) => {
+        })  .then((drinks) => res.json(drinks))
+            .catch((err) => {
             console.log(err);
             res.status(500).json(err);
         });
