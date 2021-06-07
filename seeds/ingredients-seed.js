@@ -64,6 +64,30 @@ const ingredientsData = [{
         ingredient_name: 'Steamed Soy Milk'
     },
     {
+        ingredient_name: 'Foamed 2% Milk',
+    },
+    {
+        ingredient_name: 'Foamed Whole Milk',
+    },
+    {
+        ingredient_name: 'Foamed 1% Milk',
+    },
+    {
+        ingredient_name: 'Foamed Half & Half',
+    },
+    {
+        ingredient_name: 'Foamed Heavy Whipping Cream',
+    },
+    {
+        ingredient_name: 'Foamed Oat Milk'
+    },
+    {
+        ingredient_name: 'Foamed Almond Milk'
+    },
+    {
+        ingredient_name: 'Foamed Soy Milk'
+    },
+    {
         ingredient_name: 'Sugar',
     },
     {
@@ -88,7 +112,7 @@ const ingredientsData = [{
         ingredient_name: 'Vanilla',
     },
     {
-        ingredient_name: 'Liquid Sugar',
+        ingredient_name: 'Cane Sugar',
     },
     {
         ingredient_name: 'Peppermint'
@@ -98,6 +122,30 @@ const ingredientsData = [{
     },
     {
         ingredient_name: 'Toffee'
+    },
+    {
+        ingredient_name: 'Pumpkin Spice'
+    },
+    {
+        ingredient_name: 'Raspberry'
+    },
+    {
+        ingredient_name: 'Irish Creme'
+    },
+    {
+        ingredient_name: 'Gingerbread'
+    },
+    {
+        ingredient_name: 'Coconut'
+    },
+    {
+        ingredient_name: 'Almond'
+    },
+    {
+        ingredient_name: 'Toasted Marshmellow'
+    },
+    {
+        ingredient_name: 'Salted Caramel'
     },
     {
         ingredient_name: 'Green Tea',
@@ -116,6 +164,18 @@ const ingredientsData = [{
     }, 
     {
         ingredient_name: 'White Tea'
+    },
+    {
+        ingredient_name: 'Chai Tea'
+    },
+    {
+        ingredient_name: 'Matcha Green Tea'
+    },
+    {
+        ingredient_name: 'Whipped Cream'
+    },
+    {
+        ingredient_name: 'Hot Water'
     }
 ];
 
