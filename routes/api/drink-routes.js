@@ -92,42 +92,5 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// update drink ingredients
-router.put('/:id', (req, res) => {
-    Drink.update({ingredient_id: req.body.ingredient_id}, {
-        where: {
-            id: req.params.id
-        }
-    })
-    .then((drink) => {
-        // find all associated ingredients from DrinkIngredient
-        return DrinkIngredient.findAll({ where: { drink_id: req.params.id } });
-    })
-    .then((drinkIngredient) => {
-        
-        // get list of current ingredient_ids
-        const drinkIngredientIds = drinkIngredient.map(({ ingredient_id }) => ingredient_id);
-        // create filtered list of new ingredient_ids
-        console.log('req.body.ingredientIds', req.body.ingredientIds)
-        const newDrinkIngredient = req.body.ingredientIds
-        .filter((ingredient_id) => !drinkIngredientIds.includes(ingredient_id))
-        .map((ingredient_id) => {
-            return {
-                drink_id: req.params.id,
-                ingredient_id
-            };
-        });
-        // find those that need to be removed
-        const drinkIngredientToRemove = drinkIngredient
-        .filter(({ ingredient_id }) => !req.body.ingredientIds.includes(ingredient_id))
-        .map(({ id }) => id);
-
-        // run both actions
-        return Promise.all([
-            DrinkIngredient.destroy({ where: { id: drinkIngredientToRemove } }),
-            DrinkIngredient.bulkCreate(newDrinkIngredient)
-        ]);
-    });
-})
 
 module.exports = router;
