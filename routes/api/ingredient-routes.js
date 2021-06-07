@@ -9,7 +9,10 @@ const {
 // get all ingredients
 router.get('/', (req, res) => {
     Ingredient.findAll({})
-        .then(dbIngredientData => res.json(dbIngredientData))
+        .then(dbIngredientData => {
+            //res.render('ingredients', {ingredients: dbIngredientData})
+            res.json(dbIngredientData)
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err)
