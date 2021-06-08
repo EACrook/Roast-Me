@@ -1,5 +1,4 @@
 /* Drink Menu/Blackboard styles */
-#drink-menu {
-    text-align: center;
-    color: white;
+.blackboard {
+    color: red;
 }

@@ -55,48 +55,8 @@ const drinkingredientData = [
         ingredient_id: 1
     },
     {
-        drink_id: 6,
-        ingredient_id: 2
-    },
-    {
-        drink_id: 6,
-        ingredient_id: 3
-    },
-    {
-        drink_id: 6,
-        ingredient_id: 4
-    },
-    {
         drink_id: 7,
         ingredient_id: 50
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 51
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 52
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 53
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 54
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 55
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 56
-    },
-    {
-        drink_id: 7,
-        ingredient_id: 57
     },
     {
         drink_id: 8,
