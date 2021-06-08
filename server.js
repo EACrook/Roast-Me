@@ -12,6 +12,9 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// access public directory
+app.use(express.static('public'));
+
 app.use(routes);
 
 
