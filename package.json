@@ -25,5 +25,14 @@
     "express-handlebars": "^5.3.2",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
+
+  },
+  "keywords": []
+}
+
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31ca9ad5d5073da28f022e1b5a1daa4671a4d46e
