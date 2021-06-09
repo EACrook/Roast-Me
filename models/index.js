@@ -1,7 +1,7 @@
 const Drink = require('./Drink');
 const Ingredient = require ('./Ingredient');
 const DrinkIngredient = require('./DrinkIngredient')
-
+const User = require('./User');
 // // Ingredient belongs to Drink
 // Drink.belongsTo(Ingredient, {
 //     foreignKey: 'ingredient_id'
@@ -27,5 +27,9 @@ Ingredient.belongsToMany(Drink, {
 module.exports = {
     Drink,
     Ingredient,
-    DrinkIngredient
+    DrinkIngredient,
+    User
 }
+
+
+
