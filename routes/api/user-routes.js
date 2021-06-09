@@ -1,10 +1,5 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 const {User} = require('../../models');
-
-// The `/api/categories` endpoint
-
-const router = require('express').Router();
-const { User } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
