@@ -1,14 +1,9 @@
-
-@font-face {
-    font-family: CoffeeMugs;
-    src: url('CoffeeMugs-e9Jl.ttf');
-}
-
-span {
-    font-family: CoffeeMugs;
-}
-
+/* Blackboard styles */
 .blackboard {
     color: white;
     background-image: url(../assets/dark_wall_@2X.png);
+}
+
+#roast-me {
+    font-family: 'Mountains of Christmas', cursive;
 }
