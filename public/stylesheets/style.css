@@ -7,3 +7,17 @@
 #roast-me {
     font-family: 'Mountains of Christmas', cursive;
 }
+
+#line {
+    border-top: 10px dotted white;
+    width: 65%;
+    margin: auto;
+}
+
+.board-title {
+    font-family: 'Kranky', cursive;
+}
+
+.board-content {
+    font-family: 'Walter Turncoat', cursive;
+}
