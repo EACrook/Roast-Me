@@ -1,12 +1,13 @@
-/* Blackboard styles */
-.blackboard {
-    color: white;
-    background-image: url(../assets/dark_wall_@2X.png);
-}
+/* Main header styles */
 
-#roast-me {
+.roast-me {
     font-family: 'Mountains of Christmas', cursive;
 }
+
+.log {
+    font-family: ;
+}
+/* end Main header styles */
 
 /* Home Page header styles*/
 .home-header {
@@ -18,7 +19,7 @@
 }
 
 .home-roast-me {
-    
+
 }
 
 .edit-caption-header {
@@ -28,4 +29,25 @@
     color: greenyellow;
     text-align: right;
 }
+
+/* Blackboard styles */
+.blackboard {
+    color: white;
+    background-image: url(../assets/dark_wall_@2X.png);
+}
+
+#line {
+    margin: auto;
+    width: 65%;
+    border-top: 5px dotted white;
+}
+
+.board-title {
+    font-family: 'Kranky', cursive;
+}
+
+.board-content {
+    font-family: 'Walter Turncoat', cursive;
+}
+/* end Blackboard styles */
 
