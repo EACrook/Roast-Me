@@ -8,16 +8,24 @@
     font-family: 'Mountains of Christmas', cursive;
 }
 
-#line {
-    border-top: 10px dotted white;
-    width: 65%;
-    margin: auto;
+/* Home Page header styles*/
+.home-header {
+    padding: 4rem 3.5rem;
+    background-color: rgb(44, 139, 119);
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
 }
 
-.board-title {
-    font-family: 'Kranky', cursive;
+.home-roast-me {
+    
 }
 
-.board-content {
-    font-family: 'Walter Turncoat', cursive;
+.edit-caption-header {
+    padding: 2.5rem;
+    background-color: rgb(44, 139, 119);
+    justify-content: space-between;
+    color: greenyellow;
+    text-align: right;
 }
+

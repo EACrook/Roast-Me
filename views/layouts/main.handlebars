@@ -15,16 +15,19 @@
     <title>Document</title>
 </head>
 
-<body class="{{bodyClass}}">
-    <header>
-        <h1>
-            <a href="/">Roast Me</a>
-        </h1>
-        <nav>
-            <a href="/login">login</a>
-        </nav>
+<body class="{{blackboardBody}}">
+    <header class="{{homeHeader}} {{editCaptionHeader}} flex">
+        <a href="/">
+            <h1 class="{{homeRoastMe}} {{editCaptionRoastMe}}">Roast Me</h1>
+        </a>
 
-        {{{body}}}
+        {{!-- can we make this/link to the log out instead? --}}
+        <a href="/login">
+            <nav class="{{homeLog}} {{editCaptionLog}}">login</nav>
+        </a>
+    </header>
+
+    {{{body}}}
 
 </body>
 
