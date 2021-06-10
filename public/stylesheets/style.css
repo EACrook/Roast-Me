@@ -5,30 +5,46 @@
 }
 
 .log {
-    font-family: ;
+    font-size: 3rem;
+    font-family: 'Walter Turncoat', cursive;
 }
 /* end Main header styles */
 
 /* Home Page header styles*/
 .home-header {
-    padding: 4rem 3.5rem;
+    padding: 3rem 2.5rem;
     background-color: rgb(44, 139, 119);
     justify-content: space-between;
     position: -webkit-sticky;
     position: sticky;
+    color: white;
 }
 
 .home-roast-me {
-
+    font-size: 5rem;
+    font-weight: bold;
 }
 
+/* .home-log, .edit-caption-log {
+    
+} */
+
+/* end Home Page header styles */
+
+/* Edit Caption Page header styles */
 .edit-caption-header {
     padding: 2.5rem;
     background-color: rgb(44, 139, 119);
     justify-content: space-between;
-    color: greenyellow;
+    color: white;
     text-align: right;
 }
+
+.edit-caption-roast-me {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+/* end Edit Caption Page header styles */
 
 /* Blackboard styles */
 .blackboard {
