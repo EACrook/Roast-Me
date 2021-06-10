@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User} = require('../../models');
+const { User } = require('../../models');
 
 // The `/api/categories` endpoint
 
@@ -12,15 +12,15 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    User.findOne({
-      where: {
-        id: req.params.id,
-      },
-      include: [Users],
-    })
-      .then((users) => res.json(users))
-      .catch((err) => res.status(400).json(err));
-  });
+  User.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Users],
+  })
+    .then((users) => res.json(users))
+    .catch((err) => res.status(400).json(err));
+});
 
 router.post('/', (req, res) => {
   User.create(req.body)

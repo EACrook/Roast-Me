@@ -2,9 +2,9 @@
 //event listeners
 async function loginFormHandler(event) {
     event.preventDefault();
-    // email and password login
+    //email and password login
     const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const password = document.querySelector('#current-password').value.trim();
 
     if (email && password) {
         const response = await fetch('/api/users/login', {
@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        //check the response status
+        //check for response status
         if (response.ok) {
             document.location.replace('/');
         } else {
@@ -29,8 +29,7 @@ async function signupFormHandler(event) {
     //username, email and password signup
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-
+    const password = document.querySelector('#new-password').value.trim();
 
     if (username && email && password) {
         const response = await fetch('/api/users', {
@@ -42,7 +41,7 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        //check the response status
+        //check for response status
         if (response.ok) {
             document.location.replace('/');
         } else {
@@ -50,7 +49,9 @@ async function signupFormHandler(event) {
         }
     }
 }
-//for already signed up users to login
+
+//for already signed-up users to login
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-//for users to sign up for login
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+
+//for new users to signup for login
+document.querySelector('.signup-form').addEventListener('submit', loginFormHandler);
