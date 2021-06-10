@@ -1,4 +1,4 @@
-<h1 id="roast-me" class="m-10 text-center text-8xl">Roast Soup</h1>
+<h1 id="roast-me" class="m-10 text-center text-8xl">Roast Me</h1>
 
 <hr id="line" class="flex text-center" />
 
@@ -7,18 +7,35 @@
     <div class="m-3 text-4xl board-content">insult api here</div>
 </section>
 
-<section class="justify-center m-8 p-4 text-center">
-    <h2 class="m-3 text-6xl board-title">Drink Menu:</h2>
-    {{!-- use javascript for this bullet list?? --}}
-    <ul class="m-3 text-4xl leading-tight board-content">
-        <li>Latte</li>
-        <li>Mocha</li>
-        <li>Americano</li>
-        <li>Hot Chocolate</li>
-        <li>Cappuccino</li>
-        <li>Brewed Coffee</li>
-        <li>Hot Tea</li>
-        <li>Green Tea Latte</li>
-        <li>Chai Tea Latte</li>
-    </ul>
+{{!-- make two columns here - one for drink menu and one for ingredients --}}
+{{!-- pull in drinks from database --}}
+
+<section class="grid grid-cols-2 gap-4">
+    {{!-- Drink Menu --}}
+    <article class="ml-32 justify-center text-center">
+        <h2 class="text-6xl board-title">Drink Menu:</h2>
+        {{!-- use javascript for this bullet list?? --}}
+        <ul class="m-3 p-1 text-4xl leading-tight board-content">
+            <li>Latte</li>
+            <li>Mocha</li>
+            <li>Americano</li>
+            <li>Hot Chocolate</li>
+            <li>Cappuccino</li>
+            <li>Brewed Coffee</li>
+            <li>Hot Tea</li>
+            <li>Green Tea Latte</li>
+            <li>Chai Tea Latte</li>
+        </ul>
+    </article>
+
+    {{!-- Ingredients --}}
+    <article class="mr-32 justify-center text-center">
+        <h2 class="text-6xl board-title">Ingredients:</h2>
+
+        {{!-- Ingredients --}}
+        {{!-- {{#each ingredients}}
+                 <input type="checkbox" />
+              {{/each}} --}}
+    </article>
 </section>
+

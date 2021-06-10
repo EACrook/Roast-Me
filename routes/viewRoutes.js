@@ -7,11 +7,11 @@ router.get('/', (req,res) => {
 })
 
 router.get('/blackboard', (req,res) => {
+    // get ingredients with sequelize then pass into view {ingredients}
     res.render('blackboard', {bodyClass: 'blackboard'})
 })
 
 router.get('/edit-caption', (req,res) => {
-    // get ingredients with sequelize then pass into view {ingredients}
     res.render('edit-caption')
 })
 
