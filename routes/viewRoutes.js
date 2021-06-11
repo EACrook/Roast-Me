@@ -5,8 +5,7 @@ const apiRoutes = require('./api');
 router.get('/', (req,res) => {
     res.render('home', {
         homeHeader: 'home-header',
-        homeRoastMe: 'home-roast-me',
-        homeLog: 'home-log'
+        homeRoastMe: 'home-roast-me'
     })
 })
 
@@ -17,13 +16,15 @@ router.get('/blackboard', (req,res) => {
 router.get('/edit-caption', (req,res) => {
     // action: get ingredients with sequelize then pass into view {ingredients}
     res.render('edit-caption', {
-        editCaptionHeader: 'edit-caption-header',
-        editCaptionRoastMe: 'edit-caption-roast-me',
-        editCaptionLog: 'edit-caption-log'
+        pageHeader: 'page-header',
+        pageRoastMe: 'page-roast-me'
     })
 })
 
 router.get('/login', (req,res) => {
-    res.render('login')
+    res.render('login', {
+        pageHeader: 'page-header',
+        pageRoastMe: 'page-roast-me',
+    })
 })
 module.exports = router;

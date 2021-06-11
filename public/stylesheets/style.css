@@ -12,7 +12,7 @@
 
 /* Home Page header styles*/
 .home-header {
-    padding: 3rem 2.5rem;
+    padding: 2.5rem 2rem;
     background-color: rgb(44, 139, 119);
     justify-content: space-between;
     position: -webkit-sticky;
@@ -25,22 +25,18 @@
     font-weight: bold;
 }
 
-/* .home-log, .edit-caption-log {
-    
-} */
-
 /* end Home Page header styles */
 
 /* Edit Caption Page header styles */
-.edit-caption-header {
-    padding: 2.5rem;
+.page-header {
+    padding: 2rem;
     background-color: rgb(44, 139, 119);
     justify-content: space-between;
     color: white;
     text-align: right;
 }
 
-.edit-caption-roast-me {
+.page-roast-me {
     font-size: 3.5rem;
     font-weight: bold;
 }
@@ -66,4 +62,3 @@
     font-family: 'Walter Turncoat', cursive;
 }
 /* end Blackboard styles */
-

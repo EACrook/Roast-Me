@@ -16,19 +16,20 @@
 </head>
 
 <body class="{{blackboardBody}}">
-    <header class="{{homeHeader}} {{editCaptionHeader}} flex">
+    <header class="{{homeHeader}} {{pageHeader}} flex ">
         <a href="/">
-            <h1 class="{{homeRoastMe}} {{editCaptionRoastMe}} roast-me">Roast Me</h1>
+            <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
         </a>
 
         {{!-- can we make this/link to the log out instead? --}}
-        <a href="/login">
-            <nav class="{{homeLog}} {{editCaptionLog}} log">login</nav>
+        <a href="/login" class="self-end">
+            <nav class="pr-6 log">login</nav>
         </a>
     </header>
 
     {{{body}}}
 
+    <script src="../../seeds/ingredients-seed.js"></script>
 </body>
 
 </html>
