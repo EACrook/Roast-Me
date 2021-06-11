@@ -7,7 +7,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#current-password').value.trim();
 
     if (email && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
                 email,
@@ -17,7 +17,7 @@ async function loginFormHandler(event) {
         });
         //check for response status
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/home/');
         } else {
             alert(response.statusText);
         }
@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
         });
         //check for response status
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/home/');
         } else {
             alert(response.statusText);
         }
