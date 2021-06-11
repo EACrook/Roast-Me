@@ -5,5 +5,6 @@ const insultRoutes = require('./insult-routes');
 
 router.use('/drinks', drinkRoutes);
 router.use('/ingredients', ingredientRoutes);
+router.use('/insults', insultRoutes);
 
 module.exports = router;
