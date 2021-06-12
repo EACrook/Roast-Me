@@ -11,23 +11,24 @@
 {{!-- make two columns here - one for drink menu and one for ingredients --}}
 {{!-- pull in drinks from database --}}
 
-<section class="grid grid-cols-2 gap-4">
-    {{!-- Drink Menu --}}
-    <article class="ml-32 justify-center text-center">
-        <h2 class="text-6xl board-title">Drink Menu:</h2>
-        {{!-- use javascript for this bullet list?? --}}
-        <ul class="m-3 p-1 text-4xl leading-tight board-content">
-            <li>Latte</li>
-            <li>Mocha</li>
-            <li>Americano</li>
-            <li>Hot Chocolate</li>
-            <li>Cappuccino</li>
-            <li>Brewed Coffee</li>
-            <li>Hot Tea</li>
-            <li>Green Tea Latte</li>
-            <li>Chai Tea Latte</li>
-        </ul>
-    </article>
+    <section class="grid grid-cols-2 gap-4">
+        <div class="ml-32 justify-center text-center">
+            <h2 class="text-6xl board-title">Drink Menu:</h2>
+            <ol class="drink-list">
+                {{#each drinks}}
+                <li>
+                    <div class="post">
+                        <div class="drink_name">
+                            <div>{{drink_name}}</div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+    </section>
+
+
 
     {{!-- Ingredients --}}
     <article class="mr-32 justify-center text-center">
@@ -36,16 +37,11 @@
         {{!-- Ingredients --}}
         {{!-- <ul>
             <li style="color: white;">sample text here</li>
-            
+
         </ul> --}}
 
-        {{!-- {{#each Ingredient}}
-            <li>{{this}}</li>
-            {{!-- <input type="checkbox" /> --}}
-        {{/each}} --}}
-        
+
     </article>
 </section>
 
 <script src="../../seeds/ingredients-seed.js"></script>
-
