@@ -25,6 +25,14 @@ Ingredient.belongsToMany(Drink, {
     foreignKey: 'ingredient_id'
 })
 
+DrinkIngredient.belongsTo(Drink, {
+    foreignKey: 'drink_id'
+})
+
+DrinkIngredient.belongsTo(Ingredient, {
+    foreignKey: 'ingredient_id'
+})
+
 module.exports = {
     Drink,
     Ingredient,

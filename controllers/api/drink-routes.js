@@ -1,9 +1,6 @@
 const router = require('express').Router();
-const {
-    Drink,
-    Ingredient,
-    DrinkIngredient
-} = require('../../models');
+const sequelize = require('../../config/connection');
+const { Drink, Ingredient, DrinkIngredient } = require('../../models')
 
 // get all drinks
 router.get('/', (req, res) => {

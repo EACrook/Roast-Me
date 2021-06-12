@@ -5,47 +5,55 @@
 
 <section class="justify-center m-8 p-4 text-center">
     <h2 class="m-3 text-6xl board-title">Daily Roast:</h2>
-    <div class="m-3 text-4xl board-content">insult api here</div>
+    <div class="m-3 text-4xl board-content">{{ insults.insult }}</div>
 </section>
 
 {{!-- make two columns here - one for drink menu and one for ingredients --}}
 {{!-- pull in drinks from database --}}
 
 <section class="grid grid-cols-2 gap-4">
-    {{!-- Drink Menu --}}
-    <article class="ml-32 justify-center text-center">
+    <div class="ml-32 justify-center text-center">
         <h2 class="text-6xl board-title">Drink Menu:</h2>
-        {{!-- use javascript for this bullet list?? --}}
-        <ul class="m-3 p-1 text-4xl leading-tight board-content">
-            <li>Latte</li>
-            <li>Mocha</li>
-            <li>Americano</li>
-            <li>Hot Chocolate</li>
-            <li>Cappuccino</li>
-            <li>Brewed Coffee</li>
-            <li>Hot Tea</li>
-            <li>Green Tea Latte</li>
-            <li>Chai Tea Latte</li>
-        </ul>
-    </article>
+        <ol class="drink-list">
+            {{#each drinks}}
+            <li>
+                <div class="drink">
+                    <div class="drink_name">
+                        <div>{{drink_name}}</div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</section>
 
-    {{!-- Ingredients --}}
-    <article class="mr-32 justify-center text-center">
-        <h2 class="text-6xl board-title">Ingredients:</h2>
 
-        {{!-- Ingredients --}}
-        {{!-- <ul>
-            <li style="color: white;">sample text here</li>
-            
-        </ul> --}}
 
-        {{!-- {{#each Ingredient}}
-            <li>{{this}}</li>
-            {{!-- <input type="checkbox" /> --}}
-        {{/each}} --}}
-        
-    </article>
+{{!-- Ingredients --}}
+
+<section class="grid grid-cols-2 gap-4" <article class="mr-32 justify-center text-center">
+    <h2 class="text-6xl board-title">Ingredients:</h2>
+    <ol class="ingredient-list">
+        {{#each ingredients}}
+        <li>
+            <div class="ingredient">
+                <div class='ingredient_name'>
+                    <div>{{ingredient_name}}</div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{!-- Ingredients --}}
+{{!-- <ul>
+    <li style="color: white;">sample text here</li>
+
+</ul> --}}
+
+
+</article>
 </section>
 
 <script src="../../seeds/ingredients-seed.js"></script>
-
