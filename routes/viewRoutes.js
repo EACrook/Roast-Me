@@ -1,14 +1,20 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 
-
+//added loginhbrs as first page to show w/ Roast Me header
 router.get('/', (req, res) => {
+    res.render('login', {
+        homeHeader: 'home-header',
+        homeRoastMe: 'home-roast-me'
+    })
+})
+//now homehbrs has LOGOUT at top lest corner- working once we get user route and model setup and linked to be able to save user login/signup data to db so it can be retrieved
+router.get('/home', (req, res) => {
     res.render('home', {
         homeHeader: 'home-header',
         homeRoastMe: 'home-roast-me'
     })
 })
-
 router.get('/blackboard', (req, res) => {
     res.render('blackboard', { blackboardBody: 'blackboard' })
 })

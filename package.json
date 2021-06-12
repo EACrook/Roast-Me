@@ -1,5 +1,5 @@
 {
-  "name": "Roast-Me",
+  "name": "roast-me",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -24,9 +24,10 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
+    "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
-
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
