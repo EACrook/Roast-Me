@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- Link Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kranky&family=Mountains+of+Christmas:wght@400;700&family=Walter+Turncoat&display=swap"
+        rel="stylesheet">
+    {{!-- Link Tailwind --}}
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    {{!-- Link stylesheet -having issues linking- --}}
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Document</title>
 </head>
-<body>
+
+<body class="{{blackboardBody}}">
+    <header class="{{homeHeader}} {{pageHeader}} flex ">
+        <a href="/">
+            <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
+        </a>
+
+        {{!-- can we make this/link to the log out instead? --}}
+        <a href="/login" class="self-end">
+            <nav class="pr-6 log">Login</nav>
+        </a>
+    </header>
+
     {{{body}}}
+
+    <script src="../../seeds/ingredients-seed.js"></script>
 </body>
+
 </html>
