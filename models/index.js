@@ -25,6 +25,14 @@ Ingredient.belongsToMany(Drink, {
     foreignKey: 'ingredient_id'
 })
 
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+});
+
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
 module.exports = {
     Drink,
     Ingredient,
