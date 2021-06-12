@@ -1,3 +1,16 @@
+/* make buttons dissapear and appear when needed */
 .hide {
     display: none;
+}
+/*buttons style - add image background*/
+button.submit {
+    background-image: url(
+'/assets/coffee-beans.png');
+/* image-rendering: auto; */
+width: 15%;
+height: 15%;
+background-size:  cover 50% 50%;
+color:rgb(230, 211, 116);
+font-weight:800;
+/* text-decoration-color: chocolate; */
 }
