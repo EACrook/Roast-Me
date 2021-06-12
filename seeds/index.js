@@ -3,6 +3,7 @@ const seedIngredients = require('./ingredients-seed');
 const seedDrinkIngredient = require('./drink-ingredients-seeds');
 
 const sequelize = require('../config/connection');
+const seedInsults = require('./insult-seeds');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true })
@@ -16,6 +17,9 @@ const seedAll = async () => {
 
     await seedDrinkIngredient();
     console.log('\n----- BRIDGE TABLE SEEDED -----\n')
+
+    await seedInsults();
+    console.log('\n----- INSULT TABLE SEEDED -----\n')
 
     process.exit(0);
 };
