@@ -11,37 +11,49 @@
 {{!-- make two columns here - one for drink menu and one for ingredients --}}
 {{!-- pull in drinks from database --}}
 
-    <section class="grid grid-cols-2 gap-4">
-        <div class="ml-32 justify-center text-center">
-            <h2 class="text-6xl board-title">Drink Menu:</h2>
-            <ol class="drink-list">
-                {{#each drinks}}
-                <li>
-                    <div class="post">
-                        <div class="drink_name">
-                            <div>{{drink_name}}</div>
-                        </div>
+<section class="grid grid-cols-2 gap-4">
+    <div class="ml-32 justify-center text-center">
+        <h2 class="text-6xl board-title">Drink Menu:</h2>
+        <ol class="drink-list">
+            {{#each drinks}}
+            <li>
+                <div class="post">
+                    <div class="drink_name">
+                        <div>{{drink_name}}</div>
                     </div>
-                </li>
-                {{/each}}
-            </ol>
-        </div>
-    </section>
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</section>
 
 
 
-    {{!-- Ingredients --}}
-    <article class="mr-32 justify-center text-center">
-        <h2 class="text-6xl board-title">Ingredients:</h2>
+{{!-- Ingredients --}}
 
-        {{!-- Ingredients --}}
-        {{!-- <ul>
-            <li style="color: white;">sample text here</li>
+<section class="grid grid-cols-2 gap-4" <article class="mr-32 justify-center text-center">
+    <h2 class="text-6xl board-title">Ingredients:</h2>
+    <ol class="ingredient-list">
+        {{#each ingredients}}
+        <li>
+            <div class="post">
+                <div class='ingredient_name'>
+                    <div>{{ingredient_name}}</div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{!-- Ingredients --}}
+{{!-- <ul>
+    <li style="color: white;">sample text here</li>
 
-        </ul> --}}
+</ul> --}}
 
 
-    </article>
+</article>
 </section>
 
 <script src="../../seeds/ingredients-seed.js"></script>

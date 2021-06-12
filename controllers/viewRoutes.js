@@ -22,17 +22,17 @@ router.get('/blackboard', (req,res) => {
         ],
         include: [
             {
-                model: DrinkIngredient,
-                attributes: ['drink_id', 'ingredient_id'],
+                model: Ingredient,
+                attributes: ['ingredient_name'],
                 // include: {
                 //     model: Ingredient,
                 //     attributes: ['ingredient_name']
                 // }
             },
-            {
-                model: Ingredient,
-                attributes: ['ingredient_name']
-            }
+            // {
+            //     model: Ingredient,
+            //     attributes: ['ingredient_name']
+            // }
         ]
     })
     .then(dbDrinkData => {
