@@ -2,69 +2,78 @@
 <!-- hbs added to display on login page as well-->
 
 
-    <header class="{{homeHeader}} {{pageHeader}} flex">
-        <a href="/">
-            <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
-        </a>
-    </header>
+<header class="{{homeHeader}} {{pageHeader}} flex">
+    <a href="/">
+        <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
+    </a>
+</header>
 
-<div class="flex justify-center">
-    <div>
-        <form class="login-form">
-        <div class='hide' id='logindiv'>
-            <div class='bg-gray-200'>
-                <label class='p-8 text-center text-lg' for="email-login">Email:</label>
-                <input autocomplete='username' type="text" id="email-login" />
-            </div>
-            <div class='bg-gray-200'>
-                <label class='p-8 text-center text-lg' for='current-password'>Password:</label>
-                <input autocomplete='current-password' type='password' id='current-password'>
-            </div>
-            <button
-                class='p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-200 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600'
-                type='submit'>Login</button>
-        </div>
-        <div class='bg-gray-200'>
-        
+<div class="grid gird-cols-2 gap-4">
+    <div>word
+        <form>
 
-            <button class='submit p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50' type='submit'>
-                Existing User
-            </button>
-
-        </div>
-    </form>
+        </form>
     </div>
 
-<div>
-<!--code for signup form-->
-    <form class='signup-form'>
-        <div class='hide' id='signupdiv'>
-            <div class='bg-gray-200'>
-                <label class='p-8 text-center text-lg' for='username-signup'>Username:</label>
-                <input autocomplete='username-signup' type='text' id='username-signup'>
-            </div>
-            <div class='bg-gray-200'>
-                <label class='p-8 text-center text-lg' for='email-signup'>Email:</label>
-                <input autocomplete='email-signup' type='text' id='email-signup'>
-            </div>
-            <div class='bg-gray-200'>
-                <label class='p-8 text-center text-lg' for='new-password'>Password:</label>
-                <input autocomplete='new-password' type='password' id='new-password'>
-            </div>
-            <!--added another button to have option login/logout-->
-            <button
-                class='p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-purple-200 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50'
-                type='submit'>Signup</button>
-        </div>
-        <div class='bg-gray-200'>
-            <button
-                class=' submit p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50'
-                type='submit'>New User</button>
-        </div>
-
-    </form>
+    <div>here
+        <form></form>
+    </div>
 </div>
-    
+
+<div class="grid gird-cols-2 gap-4">
+    <div>
+        <form class="login-form">
+            <div class='hide' id='logindiv'>
+                <div class='bg-gray-200'>
+                    <label class='p-8 text-center text-lg' for="email-login">Email:</label>
+                    <input autocomplete='username' type="text" id="email-login" />
+                </div>
+
+                <div class='bg-gray-200'>
+                    <label class='p-8 text-center text-lg' for='current-password'>Password:</label>
+                    <input autocomplete='current-password' type='password' id='current-password'>
+                </div>
+
+                <button class='p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-200 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600' type='submit'>Login</button>
+            </div>
+
+            <div>
+                <button class='submit p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50' type='submit'>
+                    Existing User
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <!--code for signup form-->
+        <form class='signup-form'>
+            <div class='hide' id='signupdiv'>
+                <div class='bg-gray-200'>
+                    <label class='p-8 text-center text-lg' for='username-signup'>Username:</label>
+                    <input autocomplete='username-signup' type='text' id='username-signup'>
+                </div>
+                <div class='bg-gray-200'>
+                    <label class='p-8 text-center text-lg' for='email-signup'>Email:</label>
+                    <input autocomplete='email-signup' type='text' id='email-signup'>
+                </div>
+                <div class='bg-gray-200'>
+                    <label class='p-8 text-center text-lg' for='new-password'>Password:</label>
+                    <input autocomplete='new-password' type='password' id='new-password'>
+                </div>
+                <!--added another button to have option login/logout-->
+                <button
+                    class='p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-purple-200 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50'
+                    type='submit'>Signup</button>
+            </div>
+
+            <div class='bg-gray-200'>
+                <button
+                    class=' submit p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50'
+                    type='submit'>New User</button>
+            </div>
+        </form>
+    </div> 
 </div>
     
 
