@@ -1,17 +1,14 @@
-<body class="{{blackboardBody}}">
+
     <header class="{{homeHeader}} {{pageHeader}} flex ">
         <a href="/">
             <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
         </a>
 
-        {{!-- can we make this/link to the log out instead? ** I removed this and added LOGOUT to
-        home.handlebars(FW)--}}
         <a href="/login" class="self-end">
             <nav class="pr-6 log">Logout</nav>
         </a>
     </header>
 
-</body>
 <div class="bg-gray-100">
     <!--username will appear in welcome message once we have user model and route setup and working-->
     <h1 class="p-8 text-center text-4xl">Welcome, {{user.username}}!</h1>
