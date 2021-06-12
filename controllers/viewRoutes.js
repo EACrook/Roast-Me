@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Drink, Ingredient, DrinkIngredient } = require('../models');
-const { sequelize } = require('../models/Drink');
-const apiRoutes = require('./api');
+const { sequelize, findAll } = require('../models');
+const apiRoutes = require('../controllers');
 
 
 router.get('/', (req,res) => {
@@ -12,34 +12,34 @@ router.get('/', (req,res) => {
 })
 
 router.get('/blackboard', (req,res) => {
+    // Pull all drinks to display
     Drink.findAll({
         attributes: [
             'id',
             'drink_name',
             'temp',
-            // 'ingredient_id'
+            'ingredient_id'
         ],
-        // include: [
-        //     {
-        //         model: DrinkIngredient,
-        //         attributes: ['ingredient_name'],
-        //         include: {
-        //             model: Ingredient,
-        //             attributes: ['ingredient_name']
-        //         }
-        //     },
-        //     {
-        //         model: Ingredient,
-        //         attributes: ['ingredient_name']
-        //     }
-        // ]
+        include: [
+            {
+                model: DrinkIngredient,
+                attributes: ['drink_id', 'ingredient_id'],
+                // include: {
+                //     model: Ingredient,
+                //     attributes: ['ingredient_name']
+                // }
+            },
+            {
+                model: Ingredient,
+                attributes: ['ingredient_name']
+            }
+        ]
     })
     .then(dbDrinkData => {
         console.log(dbDrinkData);
         const drinks = dbDrinkData.map(drink => drink.get({ plain: true }));
         // pass the drinks to the page
         res.render('blackboard', { drinks });
-        // {blackboardBody: 'blackboard'}
     })
     .catch(err => {
         console.log(err);

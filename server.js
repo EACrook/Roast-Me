@@ -1,4 +1,4 @@
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 const express = require('express');
 const routes = require('./controllers');
 const exphbs  = require('express-handlebars');
