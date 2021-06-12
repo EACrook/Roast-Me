@@ -3,7 +3,6 @@ const { Drink, Ingredient, DrinkIngredient } = require('../models');
 const { sequelize, findAll } = require('../models');
 const apiRoutes = require('../controllers');
 
-
 router.get('/', (req,res) => {
     res.render('home', {
         homeHeader: 'home-header',
@@ -12,6 +11,7 @@ router.get('/', (req,res) => {
 })
 
 router.get('/blackboard', (req,res) => {
+    let data = { drinks: '', ingredients: ''}
     // Pull all drinks to display
     Drink.findAll({
         attributes: [
@@ -25,21 +25,36 @@ router.get('/blackboard', (req,res) => {
                 model: Ingredient,
                 attributes: ['ingredient_name'],
                 // include: {
-                //     model: Ingredient,
-                //     attributes: ['ingredient_name']
+                //     model: DrinkIngredient,
+                //     attributes: ['drink_id', 'ingredient_id']
                 // }
             },
             // {
-            //     model: Ingredient,
-            //     attributes: ['ingredient_name']
+            //     model: DrinkIngredient,
+            //     attributes: ['drink_id', 'ingredient_id']
             // }
         ]
     })
     .then(dbDrinkData => {
-        console.log(dbDrinkData);
+        // console.log('DRINKS', dbDrinkData.ingredients);
+        
         const drinks = dbDrinkData.map(drink => drink.get({ plain: true }));
-        // pass the drinks to the page
-        res.render('blackboard', { drinks });
+        data.drinks = drinks;
+
+        // console.log('drinksplain', drinks)
+        Ingredient.findAll({
+            attributes: [
+                'id',
+                'ingredient_name'
+            ]
+        }).then(dbIngredientData => {
+            // console.log('ingredients', dbIngredientData)
+            const ingredients = dbIngredientData.map(ingredient => ingredient.get({ plain: true }));
+            data.ingredients = ingredients;
+            console.log('data', data)
+            res.render('blackboard', data);
+        })
+
     })
     .catch(err => {
         console.log(err);
