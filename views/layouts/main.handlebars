@@ -14,24 +14,32 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     {{!-- Link stylesheet -having issues linking- --}}
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Document</title>
+    <title>Roast-Me</title>
 </head>
+{{!-- Should this section be in HOME.handlebars?(FW)--}}
+
+{{!--
 
 <body class="{{blackboardBody}}">
     <header class="{{homeHeader}} {{pageHeader}} flex ">
         <a href="/">
             <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
-        </a>
+        </a> --}}
 
-        {{!-- can we make this/link to the log out instead? --}}
-        <a href="/login" class="self-end">
+        {{!-- can we make this/link to the log out instead? ** I removed this and added LOGOUT to
+        home.handlebars(FW)--}}
+        {{!-- <a href="/login" class="self-end">
             <nav class="pr-6 log">Login</nav>
-        </a>
-    </header>
-
-    {{{body}}}
-
-    <script src="../../seeds/ingredients-seed.js"></script>
+        </a> --}}
+        {{!--
+    </header> --}}
+    <!--added main(F) section and login.js link-->
+    <main>
+        {{{body}}}
+    </main>
+    {{!--
+    <script src='/public/javascript/login.js'></script>
+    <script src="../../seeds/ingredients-seed.js"></script> --}}
 </body>
 
 </html>
