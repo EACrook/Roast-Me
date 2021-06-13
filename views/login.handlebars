@@ -8,62 +8,55 @@
     </a>
 </header>
 
-<div class="grid grid-cols-2 gap-4">
-    <div class="bg-blue-100">
+<div class="grid grid-cols-2 gap-4 mx-72 my-20">
+    <div class="flex justify-center">
         <form class="login-form">
             <div class='hide' id='logindiv'>
-                <div class='bg-gray-200'>
-                    <label class='p-8 text-center text-lg' for="email-login">Email:</label>
-                    <input autocomplete='username' type="text" id="email-login" />
+                <div class='mb-8'>
+                    <label class='p-8 text-center text-4xl text-green-600' for="email-login">Email:</label>
+                    <input autocomplete='username' type="text" id="email-login" class="p-2 text-2xl w-full border-b-2 border-yellow-800" />
+                </div>
+              
+                <div class="mb-4">
+                    <label class='p-8 text-center text-4xl text-green-600' for='current-password'>Password:</label>
+                    <input autocomplete='current-password' type='password' id='current-password' class="p-2 text-2xl w-full border-b-2 border-yellow-800" />
                 </div>
 
-                <div class='bg-gray-200'>
-                    <label class='p-8 text-center text-lg' for='current-password'>Password:</label>
-                    <input autocomplete='current-password' type='password' id='current-password'>
-                </div>
-
-                <button class='p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-200 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600' type='submit'>Login</button>
+                <button class='p-4 m-8 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-green-50 hover:bg-green-100' type='submit'>Login</button>
             </div>
 
             <div>
-                <button class='submit p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50' type='submit'>
-                    Existing User
-                </button>
+                <button class='submit p-4 text-center text-4xl' type='submit'>Existing User</button>
             </div>
         </form>
     </div>
 
-    <div class="bg-purple-100">
+    <div class="flex justify-center">
         <form class='signup-form'>
             <div class='hide' id='signupdiv'>
-                <div class='bg-gray-200'>
-                    <label class='p-8 text-center text-lg' for='username-signup'>Username:</label>
-                    <input autocomplete='username-signup' type='text' id='username-signup'>
+                <div class='mb-8'>
+                    <label class='p-8 text-center text-4xl text-green-600' for='username-signup'>Username:</label>
+                    <input autocomplete='username-signup' type='text' id='username-signup' class="p-2 text-2xl w-full border-b-2 border-yellow-800" />
                 </div>
-                <div class='bg-gray-200'>
-                    <label class='p-8 text-center text-lg' for='email-signup'>Email:</label>
-                    <input autocomplete='email-signup' type='text' id='email-signup'>
+
+                <div class='mb-8'>
+                    <label class='p-8 text-center text-4xl text-green-600' for='email-signup'>Email:</label>
+                    <input autocomplete='email-signup' type='text' id='email-signup' class="p-2 text-2xl w-full border-b-2 border-yellow-800" />
                 </div>
-                <div class='bg-gray-200'>
-                    <label class='p-8 text-center text-lg' for='new-password'>Password:</label>
-                    <input autocomplete='new-password' type='password' id='new-password'>
+
+                <div class='mb-4'>
+                    <label class='p-8 text-center text-4xl text-green-600' for='new-password'>Password:</label>
+                    <input autocomplete='new-password' type='password' id='new-password' class="p-2 text-2xl w-full border-b-2 border-yellow-800" />
                 </div>
                 <!--added another button to have option login/logout-->
-                <button
-                    class='p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-purple-200 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50'
-                    type='submit'>Signup</button>
+                <button class='p-4 m-8 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-green-50 hover:bg-green-100' type='submit'>Signup</button>
             </div>
 
-            <div class='bg-gray-200'>
-                <button
-                    class=' submit p-4 text-center text-xl shadow-md bg-white rounded-md w-30 h-15 bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50'
-                    type='submit'>New User</button>
+            <div>
+                <button class='submit p-4 text-center text-4xl' type='submit'>New User</button>
             </div>
         </form>
     </div>
 </div> 
 
-
-
-<script src='/javascript/login.js'>
-</script>
+<script src='/javascript/login.js'></script>

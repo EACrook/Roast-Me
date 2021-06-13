@@ -8,12 +8,19 @@ button.submit {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 125px 125px;
-    position: fixed;
+
     /* image-rendering: auto; */
-    width: 25%;
     height: 8rem;
     /* background-size:  cover 50% 50%; */
     color:rgb(230, 211, 116);
     font-weight:800;
     /* text-decoration-color: chocolate; */
+}
+
+form label, button {
+    font-family: 'Kranky', cursive;
+}
+
+form input {
+    font-family: 'Walter Turncoat', cursive;
 }
