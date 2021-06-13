@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/blackboard', (req, res) => {
-    let data = {
+        let data = {
         drinks: '',
         ingredients: ''
     }
