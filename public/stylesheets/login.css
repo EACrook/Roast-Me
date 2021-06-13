@@ -8,13 +8,10 @@ button.submit {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 125px 125px;
-
-    /* image-rendering: auto; */
+    text-shadow: 2px 2px #2b2705;
     height: 8rem;
-    /* background-size:  cover 50% 50%; */
-    color:rgb(230, 211, 116);
     font-weight:800;
-    /* text-decoration-color: chocolate; */
+    color: #10B981;
 }
 
 form label, button {
