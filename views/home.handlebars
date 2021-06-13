@@ -18,4 +18,19 @@
     </div>
 </div>
 
-<div class="p-80 bg-purple-100"></div>
+<ol class="post-list">
+    <li>
+        <article class="post">
+            <div class="title">
+                <h3>{{title}}</h3>
+                <span>post content here..</span>
+            </div>
+
+            <div class="meta">
+                {{created_at}}
+                |
+                <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+            </div>
+        </article>
+    </li>
+</ol>

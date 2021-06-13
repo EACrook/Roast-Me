@@ -14,7 +14,11 @@ const apiRoutes = require('../controllers');
 router.get('/', (req, res) => {
     res.render('home', {
         homeHeader: 'home-header',
-        homeRoastMe: 'home-roast-me'
+        homeRoastMe: 'home-roast-me',
+        id: 1,
+        title: 'Roast of the Day',
+        created_at: new Date(),
+        comments: [{}, {}],
     })
 })
 
