@@ -8,7 +8,7 @@ async function loginFormHandler(event) {
     document.querySelector('#logindiv').classList.remove('hide');
     document.querySelector('#signupdiv').classList.add('hide');
     if (email && password) {
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/user-routes/login', {
             method: 'post',
             body: JSON.stringify({
                 email,
@@ -18,7 +18,7 @@ async function loginFormHandler(event) {
         });
         //check for response status
         if (response.ok) {
-            document.location.replace('/home/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
@@ -35,7 +35,7 @@ async function signupFormHandler(event) {
     document.querySelector('#logindiv').classList.add('hide');
 
     if (username && email && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/user-routes', {
             method: 'post',
             body: JSON.stringify({
                 username,
@@ -46,7 +46,7 @@ async function signupFormHandler(event) {
         });
         //check for response status
         if (response.ok) {
-            document.location.replace('/home/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
