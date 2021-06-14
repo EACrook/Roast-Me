@@ -1,11 +1,11 @@
 
 {{!-- need to create a class for blackboardHeader on main.handlebars --}}
-<h1 class="m-10 text-center text-8xl roast-me">Roast Me</h1>
+<h1 class="animate__animated animate__backInDown m-10 text-center text-8xl roast-me">Roast Me</h1>
 
 <hr id="line" class="flex text-center" />
 
 <section class="justify-center m-8 p-4 text-center">
-    <h2 class="m-3 text-6xl board-title">Daily Roast:</h2>
+    <h2 class="animate__animated animate__backInUp m-3 text-6xl board-title">Daily Roast:</h2>
     <div class="m-3 text-4xl board-content">{{ insults.insult }}</div>
 </section>
 
@@ -14,7 +14,7 @@
 
 <section class="grid grid-cols-2 gap-4">
     <div class="ml-32 justify-center text-center">
-        <h2 class="text-6xl board-title">Drink Menu:</h2>
+        <h2 class="animate__animated animate__backInLeft text-6xl board-title">Drink Menu:</h2>
         <ol class="drink-list">
             {{#each drinks}}
             <li>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="mr-32 justify-center text-center">
-        <h2 class="text-6xl board-title">Ingredients:</h2>
+        <h2 class="animate__animated animate__backInRight text-6xl board-title">Ingredients:</h2>
         <ol class="ingredient-list">
             {{#each ingredients}}
             <li>
