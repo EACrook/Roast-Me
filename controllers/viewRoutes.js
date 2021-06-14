@@ -3,7 +3,9 @@ const {
     Drink,
     Ingredient,
     DrinkIngredient,
-    Insult
+    Insult,
+    Post,
+    User
 } = require('../models');
 const {
     sequelize,
@@ -12,9 +14,29 @@ const {
 const apiRoutes = require('../controllers');
 
 router.get('/', (req, res) => {
-    res.render('home', {
-        homeHeader: 'home-header',
-        homeRoastMe: 'home-roast-me'
+    Post.findAll({
+        attributes: [
+            'id',
+            'comment',
+            'photo_url'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbPostdata => {
+        res.render('home', {
+            homeHeader: 'home-header',
+            homeRoastMe: 'home-roast-me' },
+            dbPostdata[0]
+        );
+    })
+    .catch(err => {
+        console.log('err', err);
+        res.status(500).json(err);
     })
 })
 

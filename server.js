@@ -3,6 +3,7 @@ const express = require('express');
 const routes = require('./controllers');
 const exphbs  = require('express-handlebars');
 const hbs = exphbs.create({});
+// const cl = new cloudinary.Cloudinary({cloud_name: "demo", secure: true});
 const connection = require('./config/connection.js');
 //added 'path' (F)
 const path = require('path');
@@ -20,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 // access public directory--FW- changed to path.join style to link login/logout and others
 // app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(routes);
+// app.use(cl);
 
 connection.sync({}).then(() => {
     console.log("db synced")

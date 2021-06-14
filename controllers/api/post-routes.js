@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const {Post, User} = require('../../models');
 
+
+// Get all posts
 router.get('/', (req,res) => {
    
     Post.findAll({
@@ -20,6 +22,8 @@ router.get('/', (req,res) => {
     });
 });
 
+
+// Get one post
 router.get('/:id', (req, res) => {
     Post.findOne({
       where: {
@@ -46,6 +50,7 @@ router.get('/:id', (req, res) => {
       });
   });
 
+  // Make a post
   router.post('/', (req, res) => {
       Post.create({
           title: req.body.title,
@@ -82,7 +87,7 @@ router.get('/:id', (req, res) => {
           res.status(500).json(err);
       });
   });
-
+// Delete a post
   router.delete('/:id', (req,res) => {
       Post.destroy({
           where: {
