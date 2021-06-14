@@ -5,6 +5,17 @@ const Insult = require('./Insult')
 const User = require('./User');
 const Post = require('./Post');
 
+
+// create a reference for the id column in the User model to link to the corresponding foreign key pair (user_id in Post model)
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+});
+
+// reverse association - define relationship of Post model to the User
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
 // // Ingredient belongs to Drink
 // Drink.belongsTo(Ingredient, {
 //     foreignKey: 'ingredient_id'
@@ -43,3 +54,4 @@ module.exports = {
     User,
     Post
 }
+

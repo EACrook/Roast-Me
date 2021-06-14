@@ -15,6 +15,7 @@ const {
 const apiRoutes = require('../controllers');
 
 router.get('/', (req, res) => {
+    // configure findAll method by customizing the attributes property
     Post.findAll({
         attributes: [
             'id',
@@ -146,4 +147,5 @@ router.get('/login', (req, res) => {
         pageRoastMe: 'page-roast-me',
     })
 })
+
 module.exports = router;
