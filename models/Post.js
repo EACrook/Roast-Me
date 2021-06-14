@@ -13,11 +13,11 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
+        comment: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        post_url: {
+        photo_url: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {

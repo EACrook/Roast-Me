@@ -3,7 +3,10 @@ const {
     Drink,
     Ingredient,
     DrinkIngredient,
-    Insult
+    Insult,
+    Post,
+    User
+
 } = require('../models');
 const {
     sequelize,
@@ -95,10 +98,31 @@ router.get('/blackboard', (req, res) => {
 
 router.get('/edit-caption', (req, res) => {
     // action: get ingredients with sequelize then pass into view {ingredients}
-    res.render('edit-caption', {
-        pageHeader: 'page-header',
-        pageRoastMe: 'page-roast-me'
+    Post.findAll({
+        attributes: [
+            'id',
+            'comment',
+            'photo_url'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
     })
+    .then(dbPostdata => {
+        console.log('abut to send page!!!', dbPostdata)
+        res.render('edit-caption', {
+            pageHeader: 'page-header',
+            pageRoastMe: 'page-roast-me'
+        })
+    })
+    .catch(err => {
+        console.log('err', err);
+        res.status(500).json(err);
+    })
+
 })
 
 router.get('/login', (req, res) => {

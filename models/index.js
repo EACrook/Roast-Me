@@ -2,11 +2,19 @@ const Drink = require('./Drink');
 const Ingredient = require ('./Ingredient');
 const DrinkIngredient = require('./DrinkIngredient')
 const Insult = require('./Insult')
+const Post = require('./Post')
+const User = require('./User')
 
 // // Ingredient belongs to Drink
 // Drink.belongsTo(Ingredient, {
 //     foreignKey: 'ingredient_id'
 // })
+Post.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+})
 
 // // Drink has many Ingredients
 // Ingredient.hasMany(Drink, {
@@ -37,5 +45,7 @@ module.exports = {
     Drink,
     Ingredient,
     DrinkIngredient,
-    Insult
+    Insult,
+    Post,
+    User
 }
