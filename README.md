@@ -7,9 +7,9 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 
 **Description**
 
-*_This application allows the user to create a post documenting coffee drinks and displays a random insult._
-*_When the user logs in they will be able to choose from a menu of coffee drinks, weather the drink is hot or cold, and upload a photo._
-*_Add a caption to your post so everyone knows how you feel about your coffee!_
+* _This application allows the user to create a post documenting coffee drinks and displays a random insult._
+* _When the user logs in they will be able to choose from a menu of coffee drinks, weather the drink is hot or cold, and upload a photo._
+* _Add a caption to your post so everyone knows how you feel about your coffee!_
 
 ### **Purpose**
 ##### [Back to Table of Contents](#Table-of-Contents)
