@@ -38,6 +38,12 @@ const InsultsData = [{
     insult: 'Life is good, you should get one.'
 },{
     insult: 'You"re like Mondays, nobody likes you.'
+},{
+    insult: 'I like the way you try.'
+}, {
+    insult: 'Your face is just fine, but we"ll have to put a bag over that personality.'
+}, {
+    insult: '*Thumbs Down*'
 }
 ]
 
