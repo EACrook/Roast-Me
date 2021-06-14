@@ -32,6 +32,12 @@ const InsultsData = [{
     insult: 'Somewhere out there is a tree tirelessly producing oxygen for you. You owe it an apology.'
 }, {
     insult: 'Life is full of disappointments, and I just added you to the list.'
+}, {
+    insult: 'I"d love to insult you, but nature already did the job.'
+}, {
+    insult: 'Life is good, you should get one.'
+},{
+    insult: 'You"re like Mondays, nobody likes you.'
 }
 ]
 
