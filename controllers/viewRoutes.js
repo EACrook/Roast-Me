@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
 router.get('/blackboard', (req, res) => {
         let data = {
         drinks: '',
-        ingredients: ''
+        ingredients: '',
+        blackboardBody: 'blackboard'
     }
     // Pull all drinks to display
     Drink.findAll({
