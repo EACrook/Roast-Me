@@ -2,6 +2,8 @@ const Drink = require('./Drink');
 const Ingredient = require ('./Ingredient');
 const DrinkIngredient = require('./DrinkIngredient')
 const Insult = require('./Insult')
+const User = require('./User');
+const Post = require('./Post');
 
 // // Ingredient belongs to Drink
 // Drink.belongsTo(Ingredient, {
@@ -37,5 +39,7 @@ module.exports = {
     Drink,
     Ingredient,
     DrinkIngredient,
-    Insult
+    Insult,
+    User,
+    Post
 }

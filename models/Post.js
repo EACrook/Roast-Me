@@ -6,6 +6,7 @@ class Post extends Model {
 }
 
 Post.init(
+    // 1st parameter: define the Post schema
     {
         id: {
             type: DataTypes.INTEGER,
@@ -17,13 +18,13 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        post_url: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isURL: true
-            }
-        },
+        // post_url: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     validate: {
+        //         isURL: true
+        //     }
+        // },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -32,6 +33,7 @@ Post.init(
             }
         }
     },
+    // 2nd parameter: configure metadata
     {
         sequelize,
         freezeTableName: true,

@@ -1,4 +1,7 @@
 const router = require('express').Router();
+
+const { Post, User, Comment } = require('../models');
+
 const {
     Drink,
     Ingredient,
@@ -10,6 +13,38 @@ const {
     findAll
 } = require('../models');
 const apiRoutes = require('../controllers');
+
+router.get('/', (req, res) => {
+    Post.findAll({
+        attributes: [
+            'id',
+            'title',
+            'created_at',
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbPostData => {
+        // pass single post object into homepage template
+        res.render('homepage', dbPostData[0]);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+})
 
 router.get('/', (req, res) => {
     res.render('home', {
