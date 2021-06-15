@@ -55,23 +55,23 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 <h3 align="center" width="100%">
  <br>1. Create New User</br>
 <p align="center" width="100%">
-    <img src="./public/assets/images/new_user.png" width="40%"/>
+    <img src="./public/assets/images/new_user.png" width="60%"/>
 </p>
 2. Welcome, visit the cafe!
 <p align="center" width="100%">
-    <img src="./public/assets/images/homepage.png" width="40%"/>
+    <img src="./public/assets/images/homepage.png" width="60%"/>
 </p>
 3. Heres the menu, don't forget to be insulted
 <p align="center" width="100%">
-    <img src="./public/assets/images/menu.png" width="40%"/>
+    <img src="./public/assets/images/menu.png" width="60%"/>
 </p>
 4. type a caption and a photo and brew that drink!
 <p align="center" width="100%">
-    <img src="./public/assets/images/post_roast.png" width="40%"/>
+    <img src="./public/assets/images/post_roast.png" width="60%"/>
 </p>
 5. look what everyone posted!
 <p align="center" width="100%">
-    <img src="./public/assets/images/coffee_posts.png" width="40%"/>
+    <img src="./public/assets/images/coffee_posts.png" width="60%"/>
 </p>
 
 ### **_Contribution_**
