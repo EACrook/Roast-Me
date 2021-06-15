@@ -33,15 +33,15 @@ const InsultsData = [{
 }, {
     insult: 'Life is full of disappointments, and I just added you to the list.'
 }, {
-    insult: 'I"d love to insult you, but nature already did the job.'
+    insult: 'I would love to insult you, but nature already did the job.'
 }, {
     insult: 'Life is good, you should get one.'
 },{
-    insult: 'You"re like Mondays, nobody likes you.'
+    insult: 'You are like Mondays, nobody likes you.'
 },{
     insult: 'I like the way you try.'
 }, {
-    insult: 'Your face is just fine, but we"ll have to put a bag over that personality.'
+    insult: 'Your face is just fine, but we will have to put a bag over that personality.'
 }, {
     insult: '*Thumbs Down*'
 }
