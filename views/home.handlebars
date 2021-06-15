@@ -1,16 +1,21 @@
-<header class="{{homeHeader}} {{pageHeader}} flex ">
+{{!-- <header class="{{homeHeader}} {{pageHeader}} flex ">
     <a href="/">
         <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
-    </a>
+    </a> --}}
 
-    <a href="/login" class="self-end">
-        <nav class="pr-6 log">Logout</nav>
-    </a>
-</header>
+    <header class="{{homeHeader}} {{pageHeader}} flex ">
+        <a href="/">
+            <h1 class="animate__animated animate__fadeInBottomLeft {{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
+        </a>
+
+        <a href="/login" class="self-end">
+            <nav class="animate__animated animate__fadeInBottomRight pr-6 log">Logout</nav>
+        </a>
+    </header>
 
 <div class="bg-gray-100">
     <!--username will appear in welcome message once we have user model and route setup and working-->
-    <h1 class="p-8 text-center text-4xl">Welcome, {{user.username}}!</h1>
+    <h1 class="animate__animated animate__rollIn p-8 text-center text-4xl">Welcome {{user.username}}</h1>
 
     <div class="p-4 pb-10 flex justify-center">
         <button class="p-6 border-8 border-gray-400 rounded-full text-3xl">Post my Roast</button>
