@@ -6,7 +6,7 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 <br>
 <br><br>
 
-### **Description**
+## Description
  ##### [Back to Table of Contents](#Table-of-Contents)
  
 * _This application allows the user to create a post documenting coffee drinks and displays a random insult._
@@ -18,17 +18,20 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
   <!-- * [Installation Instructions](#installation-Instructions) -->
   * [Usage Instructions](#Usage-Instructions)
   <!-- * [Questions](#Questions) -->
+
+  * [Future Development](#Future-Development)
+
   * [Contributing](#Contributing)
   
   * [License](#License)
 
 
-### **Purpose**
+## Purpose
 ##### [Back to Table of Contents](#Table-of-Contents)
 * _This page is meant for fun documentation of coffee intake, including special features to make you feel a little bit bad about yourself_
 
 
-### **Built With**
+## Built With
  ##### [Back to Table of Contents](#Table-of-Contents)
 
 * _HTML_
@@ -47,34 +50,48 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 
 
 
-### **Link to project launched on GitHub Pages:**
+
+## Link to project launched on Heroku:
 ##### [Back to Table of Contents](#Table-of-Contents)
-*https://likica.github.io/kitty_translator/*
 
-### **Screenshots ...more coming...**
-<!-- <h3 align="center" width="100%">
- <br>1. Landing Page</br>
-<p align="center" width="100%">
-    <img src="./assets/images/landing_pg.png" width="40%"/>
-</p>
-2. Random image of a cat
-<p align="center" width="100%">
-    <img src="./assets/images/cat_img.jpeg" width="40%"/>
-</p>
-3. Random Joke
-<p align="center" width="100%">
-    <img src="./assets/images/joke.jpeg" width="40%"/>
-</p>
-4. Random Fact about cats
-<p align="center" width="100%">
-    <img src="./assets/images/cat_fact.jpeg" width="40%"/>
-</p>
-5. Use get_cat Button to get more!
-<p align="center" width="100%">
-    <img src="./assets/images/getcat_btn.jpeg" width="40%"/>
-</p> -->
+### Deployed Application: 
+https://gentle-wildwood-31451.herokuapp.com/
 
-### **_Contribution_**
+### GitHub Repo:
+ https://github.com/EACrook/Roast-Me 
+
+## Screenshots 
+<h3 align="center" width="100%">
+ <br>1. Create New User</br>
+<p align="center" width="100%">
+    <img src="./public/assets/images/new_user.png" width="60%"/>
+</p>
+2. Welcome, visit the cafe!
+<p align="center" width="100%">
+    <img src="./public/assets/images/homepage.png" width="60%"/>
+</p>
+3. Heres the menu, don't forget to be insulted
+<p align="center" width="100%">
+    <img src="./public/assets/images/menu.png" width="60%"/>
+</p>
+4. type a caption and a photo and brew that drink!
+<p align="center" width="100%">
+    <img src="./public/assets/images/post_roast.png" width="60%"/>
+</p>
+5. look what everyone posted!
+<p align="center" width="100%">
+    <img src="./public/assets/images/coffee_posts.png" width="60%"/>
+</p>
+
+## Future Development
+##### [Back to Table of Contents](#Table-of-Contents)
+* _A clickable menu that populates the post form_
+* _time stamps on posts_
+* _posts can be 'liked' by other users_
+* _posts display author user name_
+
+
+## Contribution
 ##### [Back to Table of Contents](#Table-of-Contents)
 *Fahrija Wyroski, Emily Crook, Katie Redford, & Becca Wyland*
 
