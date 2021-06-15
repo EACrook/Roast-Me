@@ -6,7 +6,10 @@ const {
     Drink,
     Ingredient,
     DrinkIngredient,
-    Insult
+    Insult,
+    Post,
+    User
+
 } = require('../models');
 const {
     sequelize,
@@ -59,74 +62,74 @@ router.get('/', (req, res) => {
 })
 
 router.get('/blackboard', (req, res) => {
-    let data = {
+        let data = {
         drinks: '',
-        ingredients: ''
+        ingredients: '',
+        blackboardBody: 'blackboard'
     }
     // Pull all drinks to display
     Drink.findAll({
-            attributes: [
-                'id',
-                'drink_name',
-                'temp',
-                'ingredient_id'
-            ],
-            include: [{
-                    model: Ingredient,
-                    attributes: ['ingredient_name'],
+        attributes: [
+            'id',
+            'drink_name',
+            'temp',
+            'ingredient_id'
+        ],
+        include: [{
+            model: Ingredient,
+                attributes: ['ingredient_name'],
                     // include: {
                     //     model: DrinkIngredient,
                     //     attributes: ['drink_id', 'ingredient_id']
                     // }
-                },
+            },
                 // {
                 //     model: DrinkIngredient,
                 //     attributes: ['drink_id', 'ingredient_id']
                 // }
-            ]
-        })
-        .then(dbDrinkData => {
-            // console.log('DRINKS', dbDrinkData.ingredients);
+        ]
+    }).then(dbDrinkData => {
+        // console.log('DRINKS', dbDrinkData.ingredients);
 
-            const drinks = dbDrinkData.map(drink => drink.get({
+        const drinks = dbDrinkData.map(drink => drink.get({
+            plain: true
+        }));
+        data.drinks = drinks;
+
+        // console.log('drinksplain', drinks)
+        Ingredient.findAll({
+            attributes: [
+                'id',
+                'ingredient_name'
+            ]
+        }).then(dbIngredientData => {
+            // console.log('ingredients', dbIngredientData)
+            const ingredients = dbIngredientData.map(ingredient => ingredient.get({
                 plain: true
             }));
-            data.drinks = drinks;
+            data.ingredients = ingredients;
 
-            // console.log('drinksplain', drinks)
-            Ingredient.findAll({
+            Insult.findAll({
                 attributes: [
                     'id',
-                    'ingredient_name'
+                    'insult'
                 ]
-            }).then(dbIngredientData => {
-                // console.log('ingredients', dbIngredientData)
-                const ingredients = dbIngredientData.map(ingredient => ingredient.get({
+            }).then(dbInsultData => {
+                const insults = dbInsultData.map(insults => insults.get({
                     plain: true
                 }));
-                data.ingredients = ingredients;
+                let insultLength = insults.length
 
-                Insult.findAll({
-                    attributes: [
-                        'id',
-                        'insult'
-                    ]
-                }).then(dbInsultData => {
-                    const insults = dbInsultData.map(insults => insults.get({
-                        plain: true
-                    }));
-                    let insultLength = insults.length
-
-                    let idx = Math.floor(Math.random()*insultLength)
+                let idx = Math.floor(Math.random()*insultLength)
                     
-                    data.insults = insults[idx];
-                    // console.log('data.insults length', data.insults)
-                    // console.log('data', data)
-                    res.render('blackboard', data);
-                })
+                data.insults = insults[idx];
+                // console.log('data.insults length', data.insults)
+                // console.log('data', data)
+                res.render('blackboard', data);
             })
-
         })
+
+    })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -135,10 +138,31 @@ router.get('/blackboard', (req, res) => {
 
 router.get('/edit-caption', (req, res) => {
     // action: get ingredients with sequelize then pass into view {ingredients}
-    res.render('edit-caption', {
-        pageHeader: 'page-header',
-        pageRoastMe: 'page-roast-me'
+    Post.findAll({
+        attributes: [
+            'id',
+            'comment',
+            'photo_url'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
     })
+    .then(dbPostdata => {
+        console.log('abut to send page!!!', dbPostdata)
+        res.render('edit-caption', {
+            pageHeader: 'page-header',
+            pageRoastMe: 'page-roast-me'
+        })
+    })
+    .catch(err => {
+        console.log('err', err);
+        res.status(500).json(err);
+    })
+
 })
 
 router.get('/login', (req, res) => {
