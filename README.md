@@ -45,8 +45,7 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 * _Bcrypt_
 * _Dotenv_
 * _Cloudinary_
-
-
+* _Animate.css_
 
 
 
