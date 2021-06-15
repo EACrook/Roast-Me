@@ -6,11 +6,11 @@ const hbs = exphbs.create({});
 const connection = require('./config/connection.js');
 //added 'path' (F)
 const path = require('path');
-
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 const { User, Post } = require('./models')
+
+
 
 // configure handlebars
 app.engine('handlebars', hbs.engine);
@@ -28,10 +28,6 @@ app.use(routes);
 connection.sync({ force: false }).then(() => {
     console.log("db synced")
     console.log('USER MODEL!!', User)
-
-    // User.create({username: 'Katie', email: 'katie@katie.com', password: '123456789'})
-    //Post.create({comment: 'Tasty!', photo_url: 'www.google.com', user_id: 1})
-    // only listens if db is synced correctly
     app.listen(PORT, () => {
         console.log(`App listening on port ${PORT}!`)
     });

@@ -1,36 +1,34 @@
+<header class="{{homeHeader}} {{pageHeader}} flex ">
+    <a href="/">
+        <h1 class="animate__animated animate__fadeInBottomLeft {{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me
+        </h1>
+    </a>
 
-    <header class="{{homeHeader}} {{pageHeader}} flex ">
-        <a href="/">
-            <h1 class="animate__animated animate__fadeInBottomLeft {{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
-        </a>
+    <a href="/login" class="self-end">
+        <nav class="animate__animated animate__fadeInBottomRight pr-6 log">Logout</nav>
+    </a>
+</header>
 
-        <a href="/login" class="self-end">
-            <nav class="animate__animated animate__fadeInBottomRight pr-6 log">Logout</nav>
-        </a>
-    </header>
-
-<div class="bg-gray-100">
+<div>
     <!--username will appear in welcome message once we have user model and route setup and working-->
-    <h1 class="animate__animated animate__rollIn p-8 text-center text-4xl">Welcome {{user.username}}</h1>
+    <h1 class="animate__animated animate__rollIn welcome p-8 text-center text-7xl text-green-600">Welcome
+        {{user.username}}</h1>
 
     <div class="p-4 pb-10 flex justify-center">
-        <button class="p-6 border-8 border-gray-400 rounded-full text-3xl">Post my Roast</button>
+        <a href="/blackboard">
+            <button
+                class="animate__animated animate__rotateIn visit-cafe-btn p-6 border-8 border-yellow-800 rounded-full bg-green-100 text-3xl hover:bg-green-200 transition duration-500 ease-in-out">Visit
+                Cafe</button>
+        </a>
     </div>
 </div>
 
-<ol class="post-list">
-    <li>
-        <article class="post">
-            <div class="title">
-                <h3>{{title}}</h3>
-                <span>post content here..</span>
-            </div>
-
-            <div class="meta">
-                {{created_at}}
-                |
-                <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-            </div>
-        </article>
-    </li>
-</ol>
+<div class="p-14 bg-green-50">
+    <ol class="post-list">
+        {{#each posts as |post|}}
+        <li class="animate__animated animate__fadeInUp post-display flex justify-center m-10 p-14 max-w-xl">
+            {{> post-info post }}
+        </li>
+        {{/each}}
+    </ol>
+</div>

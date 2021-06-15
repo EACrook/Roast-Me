@@ -6,12 +6,12 @@ router.get('/', (req,res) => {
     Post.findAll({
         attributes: ['id', 'photo_url', 'comment', 'created_at'],
         order: [['created_at', 'DESC']],
-        include: [
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
+        // include: [
+        //     {
+        //         model: User,
+        //         attributes: ['username']
+        //     }
+        // ]
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -26,12 +26,12 @@ router.get('/:id', (req, res) => {
         id: req.params.id
       },
       attributes: ['id', 'photo_url', 'comment', 'created_at'],
-      include: [
-        {
-          model: User,
-          attributes: ['username']
-        }
-      ]
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['username']
+    //     }
+    //   ]
     })
       .then(dbPostData => {
         if (!dbPostData) {

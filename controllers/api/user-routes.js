@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: {exclude: ['password']},
-        where: {
+        where: { 
             id: req.params.id
         }
     })
@@ -41,7 +41,10 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+        console.log('--------------GOT HERE!----------------')
+        res.json(dbUserData)
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -68,6 +71,7 @@ router.post('/login',(req,res) => {
             return;
         }
 
+        dbUserData.password = undefined;
         res.json({user: dbUserData, message: 'You are now logged in!'});
     });
 });

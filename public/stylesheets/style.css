@@ -1,9 +1,9 @@
 /* Fonts */
-.board-title, .brew-drink, .post-roast-btn {
+.board-title, .brew-drink, .post-roast-btn, .welcome, .brew-drink-btn {
     font-family: 'Kranky', cursive;
 }
 
-.board-content, .change-order, .caption-text, .cloudinary-button {
+.board-content, .change-order, .caption-text, .cloudinary-button, .visit-cafe-btn, .post-display {
     font-family: 'Walter Turncoat', cursive;
 }
 /* end Fonts */
@@ -44,6 +44,35 @@
     font-size: 5rem;
     font-weight: bold;
 }
+
+.visit-cafe-btn {
+    transition: 0.3s;
+}
+
+.visit-cafe-btn:hover {
+    font-size: 2.25rem;
+    transition: 0.3s;
+}
+
+.post-display {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(44, 139, 119);
+    border-radius: 80px/40px;
+}
+
+/* meta class found in dev tools for each post with caption */
+.meta {
+    margin-top: 1.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: white;
+    font-size: 1.75rem;
+    text-align: center;
+    background-color: rgb(253, 253, 253, 0.5);
+    border-radius: 50px 15px;
+
+}
 /* end Home Page header styles */
 
 /* Edit Caption Page header styles */
@@ -51,7 +80,7 @@
     background-color: #ECFDF5;
 }
 
-.brew-drink {
+.brew-drink, .welcome {
     text-shadow: 2px 2px #2b2705;
 }
 
@@ -77,5 +106,9 @@
     margin: auto;
     width: 65%;
     border-top: 5px dotted white;
+}
+
+.brew-drink-btn {
+    border: 5px dotted white;
 }
 /* end Blackboard styles */
