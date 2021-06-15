@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-connection.sync({}).then(() => {
+connection.sync({ force: false }).then(() => {
     console.log("db synced")
     console.log('USER MODEL!!', User)
 

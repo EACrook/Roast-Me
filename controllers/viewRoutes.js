@@ -1,11 +1,15 @@
 const router = require('express').Router();
+
+const { Post, User, Comment } = require('../models');
+
 const {
     Drink,
     Ingredient,
     DrinkIngredient,
     Insult,
-    Post,
-    User
+    // Post and User have already been declared above
+    // Post,
+    // User
 
 } = require('../models');
 const {
@@ -14,10 +18,15 @@ const {
 } = require('../models');
 const apiRoutes = require('../controllers');
 
+
 router.get('/', (req, res) => {
     res.render('home', {
         homeHeader: 'home-header',
-        homeRoastMe: 'home-roast-me'
+        homeRoastMe: 'home-roast-me',
+        // id: 1,
+        // title: 'Roast of the Day',
+        // created_at: new Date(),
+        // comments: [{}, {}],
     })
 })
 
@@ -97,12 +106,11 @@ router.get('/blackboard', (req, res) => {
 });
 
 router.get('/edit-caption', (req, res) => {
-    // action: get ingredients with sequelize then pass into view {ingredients}
     Post.findAll({
         attributes: [
             'id',
             'comment',
-            'photo_url'
+            'photo_url',
         ],
         include: [
             {
@@ -115,7 +123,8 @@ router.get('/edit-caption', (req, res) => {
         console.log('abut to send page!!!', dbPostdata)
         res.render('edit-caption', {
             pageHeader: 'page-header',
-            pageRoastMe: 'page-roast-me'
+            pageRoastMe: 'page-roast-me',
+            brewBackground: 'brew-background'
         })
     })
     .catch(err => {
@@ -131,4 +140,5 @@ router.get('/login', (req, res) => {
         pageRoastMe: 'page-roast-me',
     })
 })
+
 module.exports = router;
