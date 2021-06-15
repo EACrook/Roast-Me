@@ -1,5 +1,5 @@
 /* Fonts */
-.board-title, .brew-drink, .post-roast-btn, .welcome {
+.board-title, .brew-drink, .post-roast-btn, .welcome, .brew-drink-btn {
     font-family: 'Kranky', cursive;
 }
 
@@ -86,5 +86,9 @@
     margin: auto;
     width: 65%;
     border-top: 5px dotted white;
+}
+
+.brew-drink-btn {
+    border: 5px dotted white;
 }
 /* end Blackboard styles */
