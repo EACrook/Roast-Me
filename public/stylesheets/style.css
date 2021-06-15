@@ -1,9 +1,9 @@
 /* Fonts */
-.board-title, .brew-drink, .post-roast-btn {
+.board-title, .brew-drink, .post-roast-btn, .welcome {
     font-family: 'Kranky', cursive;
 }
 
-.board-content, .change-order, .caption-text, .cloudinary-button {
+.board-content, .change-order, .caption-text, .cloudinary-button, .visit-cafe-btn {
     font-family: 'Walter Turncoat', cursive;
 }
 /* end Fonts */
@@ -44,6 +44,15 @@
     font-size: 5rem;
     font-weight: bold;
 }
+
+.visit-cafe-btn {
+    transition: 0.3s;
+}
+
+.visit-cafe-btn:hover {
+    font-size: 2.25rem;
+    transition: 0.3s;
+}
 /* end Home Page header styles */
 
 /* Edit Caption Page header styles */
@@ -51,7 +60,7 @@
     background-color: #ECFDF5;
 }
 
-.brew-drink {
+.brew-drink, .welcome {
     text-shadow: 2px 2px #2b2705;
 }
 
