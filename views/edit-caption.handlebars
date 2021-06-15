@@ -1,13 +1,30 @@
+<header class="{{homeHeader}} {{pageHeader}} flex ">
+        <a href="/">
+            <h1 class="animate__animated animate__fadeInBottomLeft {{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
+        </a>
 
-<a href="/blackboard"> &larr; Change My Order</a>
+        <a href="/login" class="self-end">
+            <nav class="animate__animated animate__fadeInBottomRight pr-6 log">Logout</nav>
+        </a>
+</header>
 
-
-<div>
-  
+<div class="animate__animated animate__lightSpeedInLeft mx-20 my-6">
+  <a href="/blackboard" class="change-order text-2xl text-yellow-800"> &larr; Change My Order</a>
 </div>
-<p>write your caption</p>
-<input type = "text"></input>
-<button id="upload_widget" class="cloudinary-button">Upload files</button>
+
+<h2 class="brew-drink animate__animated animate__zoomInDown m-12 text-center text-6xl text-green-600">Brew My Drink</h2>
+
+{{!-- Form for Post --}}
+<div class="flex justify-center items-center text-xl bg-green-50">
+  <input type="text" class="caption-text m-4 p-4 w-96 border-4 border-yellow-800 rounded-lg"></input>
+
+  <button id="upload_widget" class="cloudinary-button m-4 w-48 h-12">Upload Brew o' the Day</button>
+</div>
+
+<div class="flex justify-center m-12">
+  <button class="post-roast-btn p-4 text-center text-4xl">Post My Roast</button>
+</div>
+
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 

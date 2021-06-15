@@ -7,8 +7,9 @@ const {
     Ingredient,
     DrinkIngredient,
     Insult,
-    Post,
-    User
+    // Post and User have already been declared above
+    // Post,
+    // User
 
 } = require('../models');
 const {
@@ -137,12 +138,11 @@ router.get('/blackboard', (req, res) => {
 });
 
 router.get('/edit-caption', (req, res) => {
-    // action: get ingredients with sequelize then pass into view {ingredients}
     Post.findAll({
         attributes: [
             'id',
             'comment',
-            'photo_url'
+            'photo_url',
         ],
         include: [
             {
@@ -155,7 +155,8 @@ router.get('/edit-caption', (req, res) => {
         console.log('abut to send page!!!', dbPostdata)
         res.render('edit-caption', {
             pageHeader: 'page-header',
-            pageRoastMe: 'page-roast-me'
+            pageRoastMe: 'page-roast-me',
+            brewBackground: 'brew-background'
         })
     })
     .catch(err => {

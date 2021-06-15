@@ -1,5 +1,14 @@
-/* Main header styles */
+/* Fonts */
+.board-title, .brew-drink, .post-roast-btn {
+    font-family: 'Kranky', cursive;
+}
 
+.board-content, .change-order, .caption-text, .cloudinary-button {
+    font-family: 'Walter Turncoat', cursive;
+}
+/* end Fonts */
+
+/* Header styles */
 .roast-me {
     font-family: 'Mountains of Christmas', cursive;
 }
@@ -8,26 +17,7 @@
     font-size: 3rem;
     font-family: 'Walter Turncoat', cursive;
 }
-/* end Main header styles */
 
-/* Home Page header styles*/
-.home-header {
-    padding: 2.5rem 2rem;
-    background-color: rgb(44, 139, 119);
-    justify-content: space-between;
-    position: -webkit-sticky;
-    position: sticky;
-    color: white;
-}
-
-.home-roast-me {
-    font-size: 5rem;
-    font-weight: bold;
-}
-
-/* end Home Page header styles */
-
-/* Edit Caption Page header styles */
 .page-header {
     padding: 2rem;
     background-color: rgb(44, 139, 119);
@@ -39,6 +29,41 @@
 .page-roast-me {
     font-size: 3.5rem;
     font-weight: bold;
+}
+/* end Main header styles */
+
+/* Home Page header styles*/
+.home-header {
+    padding: 2.5rem 2rem;
+    background-color: rgb(44, 139, 119);
+    justify-content: space-between;
+    color: white;
+}
+
+.home-roast-me {
+    font-size: 5rem;
+    font-weight: bold;
+}
+/* end Home Page header styles */
+
+/* Edit Caption Page header styles */
+.brew-background {
+    background-color: #ECFDF5;
+}
+
+.brew-drink {
+    text-shadow: 2px 2px #2b2705;
+}
+
+.post-roast-btn {
+    background-image: url('../assets/coffee-cup.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125px 125px;
+    text-shadow: 2px 2px #2b2705;
+    height: 8rem;
+    font-weight:800;
+    color: #10B981;
 }
 /* end Edit Caption Page header styles */
 
@@ -52,13 +77,5 @@
     margin: auto;
     width: 65%;
     border-top: 5px dotted white;
-}
-
-.board-title {
-    font-family: 'Kranky', cursive;
-}
-
-.board-content {
-    font-family: 'Walter Turncoat', cursive;
 }
 /* end Blackboard styles */
