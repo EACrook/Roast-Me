@@ -14,10 +14,26 @@ const {
 } = require('../models');
 const apiRoutes = require('../controllers');
 
+router.get('/post/:id', (req, res) => {
+    const post = {
+      id: 1,
+      photo_url: 'http://res.cloudinary.com/do24cjpnx/image/upload/v1623708882/IMG_0005_ksr5nx.jpg',
+      comment: 'A Photo!',
+      created_at: new Date(),
+      user: {
+        username: 'test_user'
+      }
+    };
+  
+    res.render('single-post', { post });
+  });
+
 router.get('/', (req, res) => {
     let data = {
         posts: '',
-        username: ''
+        username: '',
+        homeHeader: 'home-header',
+        homeRoastMe: 'home-roast-me'
     }
     Post.findAll({
         attributes: [
@@ -30,15 +46,11 @@ router.get('/', (req, res) => {
             attributes: ['username']
         }]
     }).then(dbHomeData => {
-        console.log('POSTS', dbHomeData);
         const posts = dbHomeData.map(post => post.get({
             plain: true
         }));
         data.posts = posts;
-        res.render('home', {
-            homeHeader: 'home-header',
-            homeRoastMe: 'home-roast-me'
-        })
+        res.render('home', data)
     })
     .catch(err => {
         console.log('err', err);

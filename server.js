@@ -6,11 +6,11 @@ const hbs = exphbs.create({});
 const connection = require('./config/connection.js');
 //added 'path' (F)
 const path = require('path');
-
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 const { User, Post } = require('./models')
+
+require('handlebars-form-helpers').register(hbs.handlebars);
 
 // configure handlebars
 app.engine('handlebars', hbs.engine);
