@@ -49,3 +49,4 @@ module.exports = {
     Post,
     User
 }
+
