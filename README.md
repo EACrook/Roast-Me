@@ -88,6 +88,7 @@ https://gentle-wildwood-31451.herokuapp.com/
 * _A clickable menu that populates the post form_
 * _time stamps on posts_
 * _posts can be 'liked' by other users_
+* _posts display author user name_
 
 
 ## Contribution
