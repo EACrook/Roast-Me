@@ -8,7 +8,8 @@ router.use('/api', apiRoutes);
 router.use('/', viewRoutes);
 
 router.use((req, res) => {
-  res.send("<h1>Wrong Route!</h1>")
+  console.error('Error: invalid route hit')
+  res.status(404).send("<h1>Wrong Route!</h1>")
 });
 
 module.exports = router;

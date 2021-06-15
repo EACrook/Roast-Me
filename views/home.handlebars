@@ -1,3 +1,7 @@
+<header class="{{homeHeader}} {{pageHeader}} flex ">
+    <a href="/">
+        <h1 class="{{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
+    </a>
 
     <header class="{{homeHeader}} {{pageHeader}} flex ">
         <a href="/">
@@ -18,19 +22,12 @@
     </div>
 </div>
 
-<ol class="post-list">
-    <li>
-        <article class="post">
-            <div class="title">
-                <h3>{{title}}</h3>
-                <span>post content here..</span>
-            </div>
-
-            <div class="meta">
-                {{created_at}}
-                |
-                <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-            </div>
-        </article>
-    </li>
-</ol>
+<div class="p-80 bg-purple-100">
+    <ol class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post }}
+        </li>
+        {{/each}}
+    </ol>
+</div>

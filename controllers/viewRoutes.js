@@ -1,15 +1,12 @@
 const router = require('express').Router();
 
-const { Post, User, Comment } = require('../models');
-
 const {
     Drink,
     Ingredient,
     DrinkIngredient,
     Insult,
-    // Post and User have already been declared above
-    // Post,
-    // User
+    Post,
+    User
 
 } = require('../models');
 const {
@@ -18,87 +15,120 @@ const {
 } = require('../models');
 const apiRoutes = require('../controllers');
 
+router.get('/post/:id', (req, res) => {
+    const post = {
+      id: 1,
+      photo_url: 'http://res.cloudinary.com/do24cjpnx/image/upload/v1623708882/IMG_0005_ksr5nx.jpg',
+      comment: 'A Photo!',
+      created_at: new Date(),
+      user: {
+        username: 'test_user'
+      }
+    };
+  
+    res.render('single-post', { post });
+  });
 
 router.get('/', (req, res) => {
-    res.render('home', {
+    let data = {
+        posts: '',
+        username: '',
         homeHeader: 'home-header',
-        homeRoastMe: 'home-roast-me',
-        // id: 1,
-        // title: 'Roast of the Day',
-        // created_at: new Date(),
-        // comments: [{}, {}],
+        homeRoastMe: 'home-roast-me'
+    }
+    Post.findAll({
+        attributes: [
+            'id',
+            'comment',
+            'photo_url'
+        ],
+        include: [{
+            model: User,
+            attributes: ['username']
+        }]
+    }).then(dbHomeData => {
+        const posts = dbHomeData.map(post => post.get({
+            plain: true
+        }));
+        data.posts = posts;
+        res.render('home', data)
     })
+    .catch(err => {
+        console.log('err', err);
+        res.status(500).json(err);
+    })
+
 })
 
 router.get('/blackboard', (req, res) => {
-        let data = {
+    let data = {
         drinks: '',
         ingredients: '',
         blackboardBody: 'blackboard'
     }
     // Pull all drinks to display
     Drink.findAll({
-        attributes: [
-            'id',
-            'drink_name',
-            'temp',
-            'ingredient_id'
-        ],
-        include: [{
-            model: Ingredient,
-                attributes: ['ingredient_name'],
+            attributes: [
+                'id',
+                'drink_name',
+                'temp',
+                'ingredient_id'
+            ],
+            include: [{
+                    model: Ingredient,
+                    attributes: ['ingredient_name'],
                     // include: {
                     //     model: DrinkIngredient,
                     //     attributes: ['drink_id', 'ingredient_id']
                     // }
-            },
+                },
                 // {
                 //     model: DrinkIngredient,
                 //     attributes: ['drink_id', 'ingredient_id']
                 // }
-        ]
-    }).then(dbDrinkData => {
-        // console.log('DRINKS', dbDrinkData.ingredients);
-
-        const drinks = dbDrinkData.map(drink => drink.get({
-            plain: true
-        }));
-        data.drinks = drinks;
-
-        // console.log('drinksplain', drinks)
-        Ingredient.findAll({
-            attributes: [
-                'id',
-                'ingredient_name'
             ]
-        }).then(dbIngredientData => {
-            // console.log('ingredients', dbIngredientData)
-            const ingredients = dbIngredientData.map(ingredient => ingredient.get({
+        }).then(dbDrinkData => {
+            // console.log('DRINKS', dbDrinkData.ingredients);
+
+            const drinks = dbDrinkData.map(drink => drink.get({
                 plain: true
             }));
-            data.ingredients = ingredients;
+            data.drinks = drinks;
 
-            Insult.findAll({
+            // console.log('drinksplain', drinks)
+            Ingredient.findAll({
                 attributes: [
                     'id',
-                    'insult'
+                    'ingredient_name'
                 ]
-            }).then(dbInsultData => {
-                const insults = dbInsultData.map(insults => insults.get({
+            }).then(dbIngredientData => {
+                // console.log('ingredients', dbIngredientData)
+                const ingredients = dbIngredientData.map(ingredient => ingredient.get({
                     plain: true
                 }));
-                let insultLength = insults.length
+                data.ingredients = ingredients;
 
-                let idx = Math.floor(Math.random()*insultLength)
-                    
-                data.insults = insults[idx];
-                // console.log('data.insults length', data.insults)
-                // console.log('data', data)
-                res.render('blackboard', data);
+                Insult.findAll({
+                    attributes: [
+                        'id',
+                        'insult'
+                    ]
+                }).then(dbInsultData => {
+                    const insults = dbInsultData.map(insults => insults.get({
+                        plain: true
+                    }));
+                    let insultLength = insults.length
+
+                    let idx = Math.floor(Math.random() * insultLength)
+
+                    data.insults = insults[idx];
+                    // console.log('data.insults length', data.insults)
+                    // console.log('data', data)
+                    res.render('blackboard', data);
+                })
             })
-        })
 
-    })
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -111,6 +141,7 @@ router.get('/edit-caption', (req, res) => {
             'id',
             'comment',
             'photo_url',
+            
         ],
         include: [
             {
@@ -124,14 +155,13 @@ router.get('/edit-caption', (req, res) => {
         res.render('edit-caption', {
             pageHeader: 'page-header',
             pageRoastMe: 'page-roast-me',
-            brewBackground: 'brew-background'
+            brewBackground: 'brew-background' 
+        })
+        .catch(err => {
+            console.log('err', err);
+            res.status(500).json(err);
         })
     })
-    .catch(err => {
-        console.log('err', err);
-        res.status(500).json(err);
-    })
-
 })
 
 router.get('/login', (req, res) => {
