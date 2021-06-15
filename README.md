@@ -49,8 +49,14 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 
 
 
-## Link to project launched on GitHub Pages:
+
+## Link to project launched on Heroku:
 ##### [Back to Table of Contents](#Table-of-Contents)
+
+### Deployed Application: 
+https://gentle-wildwood-31451.herokuapp.com/
+
+### GitHub Repo:
  https://github.com/EACrook/Roast-Me 
 
 ## Screenshots 
@@ -81,6 +87,7 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 * _A clickable menu that populates the post form_
 * _time stamps on posts_
 * _posts can be 'liked' by other users_
+* _posts display author user name_
 
 
 ## Contribution
