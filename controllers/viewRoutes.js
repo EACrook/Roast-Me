@@ -18,47 +18,15 @@ const {
 } = require('../models');
 const apiRoutes = require('../controllers');
 
-router.get('/', (req, res) => {
-    // configure findAll method by customizing the attributes property
-    Post.findAll({
-        attributes: [
-            'id',
-            'title',
-            'created_at',
-        ],
-        include: [
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
-    })
-    .then(dbPostData => {
-        // pass single post object into homepage template
-        res.render('homepage', dbPostData[0]);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
-})
 
 router.get('/', (req, res) => {
     res.render('home', {
         homeHeader: 'home-header',
         homeRoastMe: 'home-roast-me',
-        id: 1,
-        title: 'Roast of the Day',
-        created_at: new Date(),
-        comments: [{}, {}],
+        // id: 1,
+        // title: 'Roast of the Day',
+        // created_at: new Date(),
+        // comments: [{}, {}],
     })
 })
 
