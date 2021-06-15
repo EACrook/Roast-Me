@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const { User, Post } = require('./models')
 
-require('handlebars-form-helpers').register(hbs.handlebars);
+
 
 // configure handlebars
 app.engine('handlebars', hbs.engine);
