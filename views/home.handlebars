@@ -9,9 +9,9 @@
     </a>
 </header>
 
-<div class="bg-green-50">
+<div>
     <!--username will appear in welcome message once we have user model and route setup and working-->
-    <h1 class="animate__animated animate__rollIn welcome p-8 text-center text-6xl text-green-600">Welcome
+    <h1 class="animate__animated animate__rollIn welcome p-8 text-center text-7xl text-green-600">Welcome
         {{user.username}}</h1>
 
     <div class="p-4 pb-10 flex justify-center">
@@ -23,10 +23,10 @@
     </div>
 </div>
 
-<div class="p-80 bg-purple-100">
+<div class="p-14 bg-green-50">
     <ol class="post-list">
         {{#each posts as |post|}}
-        <li>
+        <li class="animate__animated animate__fadeInUp post-display flex justify-center m-10 p-14 max-w-xl">
             {{> post-info post }}
         </li>
         {{/each}}
