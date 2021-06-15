@@ -8,7 +8,7 @@ async function loginFormHandler(event) {
     document.querySelector('#logindiv').classList.remove('hide');
     document.querySelector('#signupdiv').classList.add('hide');
     if (email && password) {
-        const response = await fetch('/api/user-routes/login', {
+        const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
                 email,
@@ -35,7 +35,7 @@ async function signupFormHandler(event) {
     document.querySelector('#logindiv').classList.add('hide');
 
     if (username && email && password) {
-        const response = await fetch('/api/user-routes', {
+        const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
                 username,
