@@ -4,8 +4,8 @@
 
 <hr id="line" class="flex text-center" />
 
-<section class="justify-center m-8 p-4 text-center">
-    <h2 class="animate__animated animate__backInUp m-3 text-6xl board-title">Daily Roast:</h2>
+<section class="animate__animated animate__backInUp justify-center m-8 p-4 text-center">
+    <h2 class="m-3 text-6xl board-title">Daily Roast:</h2>
     <div class="m-3 text-4xl board-content">{{ insults.insult }}</div>
 </section>
 
@@ -13,14 +13,14 @@
 {{!-- pull in drinks from database --}}
 
 <section class="grid grid-cols-2 gap-4">
-    <div class="ml-32 justify-center text-center">
-        <h2 class="animate__animated animate__backInLeft text-6xl board-title">Drink Menu:</h2>
+    <div class="animate__animated animate__backInLeft ml-32 justify-center text-center">
+        <h2 class="mb-2 text-6xl board-title">Drink Menu:</h2>
         <ol class="drink-list">
             {{#each drinks}}
             <li>
                 <div class="drink">
                     <div class="drink_name">
-                        <div class="board-content">{{drink_name}}</div>
+                        <div class="board-content text-4xl">{{drink_name}}</div>
                     </div>
                 </div>
             </li>
@@ -28,8 +28,8 @@
         </ol>
     </div>
 
-    <div class="mr-32 justify-center text-center">
-        <h2 class="animate__animated animate__backInRight text-6xl board-title">Ingredients:</h2>
+    <div class="animate__animated animate__backInRight mr-32 justify-center text-center">
+        <h2 class="mb-2 text-6xl board-title">Ingredients:</h2>
         <ol class="ingredient-list">
             {{#each ingredients}}
             <li>
@@ -43,6 +43,12 @@
         </ol>
     </div>
 </section>
+
+<div>
+    <a href="/edit-caption">
+        <button >Brew My Drink</button>
+    </a>
+</div>
 
 
 
