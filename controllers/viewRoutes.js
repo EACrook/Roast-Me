@@ -15,20 +15,6 @@ const {
 } = require('../models');
 const apiRoutes = require('../controllers');
 
-router.get('/post/:id', (req, res) => {
-    const post = {
-      id: 1,
-      photo_url: 'http://res.cloudinary.com/do24cjpnx/image/upload/v1623708882/IMG_0005_ksr5nx.jpg',
-      comment: 'A Photo!',
-      created_at: new Date(),
-      user: {
-        username: 'test_user'
-      }
-    };
-  
-    res.render('single-post', { post });
-  });
-
 router.get('/', (req, res) => {
     let data = {
         posts: '',
@@ -136,32 +122,30 @@ router.get('/blackboard', (req, res) => {
 });
 
 router.get('/edit-caption', (req, res) => {
+    // action: get ingredients with sequelize then pass into view {ingredients}
     Post.findAll({
-        attributes: [
-            'id',
-            'comment',
-            'photo_url',
-            
-        ],
-        include: [
-            {
+            attributes: [
+                'id',
+                'comment',
+                'photo_url'
+            ],
+            include: [{
                 model: User,
                 attributes: ['username']
-            }
-        ]
-    })
-    .then(dbPostdata => {
-        console.log('abut to send page!!!', dbPostdata)
-        res.render('edit-caption', {
-            pageHeader: 'page-header',
-            pageRoastMe: 'page-roast-me',
-            brewBackground: 'brew-background' 
+            }]
+        })
+        .then(dbPostdata => {
+            console.log('abut to send page!!!', dbPostdata)
+            res.render('edit-caption', {
+                pageHeader: 'page-header',
+                pageRoastMe: 'page-roast-me'
+            })
         })
         .catch(err => {
             console.log('err', err);
             res.status(500).json(err);
         })
-    })
+
 })
 
 router.get('/login', (req, res) => {

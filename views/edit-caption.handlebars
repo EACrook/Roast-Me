@@ -1,11 +1,11 @@
 <header class="{{homeHeader}} {{pageHeader}} flex ">
-        <a href="/">
-            <h1 class="animate__animated animate__fadeInBottomLeft {{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
-        </a>
+  <a href="/">
+    <h1 class="animate__animated animate__fadeInBottomLeft {{homeRoastMe}} {{pageRoastMe}} pl-6 roast-me">Roast Me</h1>
+  </a>
 
-        <a href="/login" class="self-end">
-            <nav class="animate__animated animate__fadeInBottomRight pr-6 log">Logout</nav>
-        </a>
+  <a href="/login" class="self-end">
+    <nav class="animate__animated animate__fadeInBottomRight pr-6 log">Logout</nav>
+  </a>
 </header>
 
 <div class="animate__animated animate__lightSpeedInLeft mx-20 my-6">
@@ -16,19 +16,18 @@
 
 {{!-- Form for Post --}}
 <div class="animate__animated animate__bounceInUp flex justify-center items-center text-xl bg-green-50">
-  <input type="text" placeholder="Edit Caption..." class="caption-text m-4 p-4 w-96 border-4 border-yellow-800 rounded-lg"></input>
+  <input id="comment" type="text" placeholder="Edit Caption..."
+    class="caption-text m-4 p-4 w-96 border-4 border-yellow-800 rounded-lg"></input>
 
   <button id="upload_widget" class="cloudinary-button m-4 w-48 h-12">Upload Brew o' the Day</button>
 </div>
 
 <div class="flex justify-center m-12">
-  <button class="animate__animated animate__bounceInUp post-roast-btn p-4 text-center text-4xl">Post My Roast</button>
+  <a href="/">
+    <button class="animate__animated animate__bounceInUp post-roast-btn p-4 text-center text-4xl">Post My Roast</button>
+  </a>
 </div>
 
-
-{{!-- <p>write your caption</p>
-<input id="comment" type="text"> </input>
-<button id="upload_widget" class="cloudinary-button">Upload files</button> --}}
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
@@ -37,14 +36,14 @@
     const comment = document.querySelector('#comment').value.trim();
     const response = await fetch('/api/posts', {
       method: 'post',
-      body: JSON.stringify({comment, photo_url, user_id: '1'}),
+      body: JSON.stringify({ comment, photo_url }),
       headers: { 'Content-Type': 'application/json' }
     });
     //check for response status
     if (response.ok) {
-      alert('it worked')
+      console.log('it worked')
     } else {
-      alert('it didn\'t worked')
+      console.error('ERROR')
     }
   }
 
