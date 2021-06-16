@@ -88,6 +88,9 @@ https://gentle-wildwood-31451.herokuapp.com/
 * _time stamps on posts_
 * _posts can be 'liked' by other users_
 * _posts display author user name_
+* _additional post functionality_
+
+
 
 
 ## Contribution
