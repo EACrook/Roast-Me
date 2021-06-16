@@ -46,6 +46,7 @@ Ever wish people knew how you take your coffee everyday? Want friends and family
 * _Dotenv_
 * _Cloudinary_
 * _Animate.css_
+* _Heroku_
 
 
 
@@ -89,6 +90,7 @@ https://gentle-wildwood-31451.herokuapp.com/
 * _posts can be 'liked' by other users_
 * _posts display author user name_
 * _additional post functionality_
+* _Post moderation_
 
 
 
