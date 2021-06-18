@@ -10,7 +10,18 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const { User, Post } = require('./models')
 
-
+const session = require('express-session');
+const { sequelize } = require('./models/Drink');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sess = {
+  secret: 'super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db:sequelize
+  })
+};
 
 // configure handlebars
 app.engine('handlebars', hbs.engine);
