@@ -22,7 +22,7 @@ const sess = {
     db:sequelize
   })
 };
-
+app.use(session(sess))
 // configure handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

@@ -3,8 +3,8 @@
 async function loginFormHandler(event) {
     event.preventDefault();
     //email and password login
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#current-password').value.trim();
+    const email = (document.querySelector('#email-login').value).trim();
+    const password = (document.querySelector('#current-password').value).trim();
     document.querySelector('#logindiv').classList.remove('hide');
     document.querySelector('#signupdiv').classList.add('hide');
     if (email && password) {
